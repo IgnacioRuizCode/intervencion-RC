@@ -1,0 +1,62 @@
+.navbar-logo {
+  height: 35px;
+  width: auto;
+  filter: invert(1);
+}
+body {
+  background-color: #0d0d0d;
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  border: 2.5px solid #ffffff;
+  border-radius: 50%;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 800;
+  font-family: sans-serif;
+}
+
+.brand-title {
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: -0.5px;
+  font-family: Arial, sans-serif;
+}
+
+.brand-subtitle {
+  color: #ebe9e9;
+  font-weight: 600;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  font-family: Arial, sans-serif;
+}
+.nav-link{
+  color:#fff
+}
+
+.boton-comprar {
+  background-color: #e52421;
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+}
+
+.boton-comprar:hover {
+  background-color: #350807;
+  color: #fff;
+}
+
+
+@media (max-width: 575px) {
+  .agenda-item {
+    gap: 1rem;
+  }
+}
