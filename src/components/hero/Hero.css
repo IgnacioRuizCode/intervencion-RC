@@ -1,3 +1,73 @@
 .redBox {
-    
+    width: 1312px;
+    height: 500px;
+    border: solid 1px var(--rc-black);
+    border-radius: var(--rc-radius-block);
+    background-color: var(--rc-gradient);
+    display: flex;
+    font-family: var(--rc-font-family);
+}
+
+.boxFlexLeft {
+    flex: 2;
+}
+
+.boxFlexRight {
+    flex: 1;
+}
+
+.subTitle {
+    display: flex;
+}
+
+.subTitleWS {
+    color: var(--rc-white);
+}
+
+.subTitleEL {
+
+}
+
+.mainTitle {
+
+}
+
+.textDescription {
+
+}
+
+.btnBlack {
+
+}
+
+.btnRed {
+
+}
+
+.blackBox {
+
+}
+
+.blackBoxFlex {
+
+}
+
+.iconBB {
+
+}
+
+.textSup {
+
+}
+
+.textInf {
+
+}
+
+.blackPill {
+
+}
+
+.redPill {
+
 }

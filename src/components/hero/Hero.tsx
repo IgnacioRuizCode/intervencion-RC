@@ -3,55 +3,59 @@ import "./Hero.css"
 function Hero () {
 
     return (
-        <section>
-            <div>
-                <div>
-                    <p>WORKSHOP</p> 
-                    <p>ENTRADAS LIMITADAS</p>
+        <section className="redBox">
+            <div className="boxFlexLeft">
+                <div className="subTitle">
+                    <p className="subTitleWS">WORKSHOP</p> 
+                    <p className="subTitleEL">ENTRADAS LIMITADAS</p>
                 </div>
                 <div>
-                    <h2>¿POR DÓNDE EMPIEZO A PROGRAMAR?</h2>
+                    <h2 className="mainTitle">¿POR DÓNDE EMPIEZO A PROGRAMAR?</h2>
+                </div>
+                <div >
+                    <p className="textDescrption">Una tarde con diez speakers de Rolling Code School para ordenar tus primeros pasos: qué aprender, cómo practicar y cómo mostrar lo que sabes.</p>
                 </div>
                 <div>
-                    Una tarde con diez speakers de Rolling Code School para ordenar tus primeros pasos: qué aprender, cómo practicar y cómo mostrar lo que sabes.
-                </div>
-                <div>
-                    <a href="">Comprar entrada</a>
-                    <a href="">Ver agenda</a>
+                    <a className="btnBlack" href="">Comprar entrada</a>
+                    <a className="btnRed" href="">Ver agenda</a>
                 </div>
             </div>
-            <div>
-                <div>
-                    <div>
-                        <img src="../../assets/" alt="hero-calendar" />
+            <div className="boxFlexRight">
+                <div className="blackBox">
+                    <div className="blackBoxFlex">
+                        <div>
+                            <img className="iconBB" src="../../assets/" alt="hero-calendar" />
+                        </div>
+                        <div>
+                            <p className="textSup">JUE 19/11</p>
+                            <p className="textInf">18.00 hs</p>
+                        </div>
+                    </div>
+                    <hr />
+                    <div className="blackBoxFlex">
+                        <div>
+                            <img className="iconBB" src="" alt="hero-location" />
+                        </div>
+                        <div>
+                            <p className="textSup">Rolling Code School</p>
+                            <p className="textInf">Gral. Paz 576, Entrepiso</p>
+                        </div>
+                    </div>
+                    <hr />
+                    <div className="blackBoxFlex">
+                        <div>
+                            <img className="iconBB" src="" alt="hero-ticket" />
+                        </div>
+                        <div>
+                            <p className="textSup">Entradas desde $15.000</p>
+                            <p className="textInf">Early Bird hasta el 31/10</p>
+                        </div>
                     </div>
                     <div>
-                        <p>JUE 19/11</p>
-                        <p>18.00 hs</p>
+                        <span className="blackPill">Presencial</span>
+                        <span className="blackPill">Virtual</span>
+                        <span className="redPill">Cupos limitados</span>
                     </div>
-                </div>
-                <div>
-                    <div>
-                        <img src="" alt="hero-location" />
-                    </div>
-                    <div>
-                        <p>Rolling Code School</p>
-                        <p>Gral. Paz 576, Entrepiso</p>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <img src="" alt="hero-ticket" />
-                    </div>
-                    <div>
-                        <p>Entradas desde $15.000</p>
-                        <p>Early Bird hasta el 31/10</p>
-                    </div>
-                </div>
-                <div>
-                    <span>Presencial</span>
-                    <span>Virtual</span>
-                    <span>Cupos limitados</span>
                 </div>
             </div>
         </section>

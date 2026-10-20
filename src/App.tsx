@@ -3,6 +3,7 @@ import Location from './components/location/Location'
 import { SpeakersSection } from './components/speakersSection/SpeakersSection'
 
 
+import Hero from './components/hero/Hero'
 
 function App() {
 
@@ -10,6 +11,9 @@ function App() {
     <>
     <SpeakersSection/>
     <Location/>
+
+
+    <Hero/>
     </>
   )
 }
