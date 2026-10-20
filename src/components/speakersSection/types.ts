@@ -1,0 +1,9 @@
+interface RCSpeaker {
+  id: number;
+  name: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+}
+
+export type { RCSpeaker }
