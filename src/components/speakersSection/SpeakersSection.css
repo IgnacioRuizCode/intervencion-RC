@@ -1,0 +1,10 @@
+.hover-tarjeta {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #2a2a2a; 
+}
+
+.hover-tarjeta:hover {
+  transform: translateY(-8px); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); 
+  border-color: #e0202a; 
+}
