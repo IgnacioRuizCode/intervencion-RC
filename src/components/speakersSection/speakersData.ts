@@ -1,5 +1,6 @@
 import type { RCSpeaker } from "./types";
 
+
 const speakersData: RCSpeaker[] = [
 
     {
@@ -7,70 +8,70 @@ const speakersData: RCSpeaker[] = [
     name: "Tomas Escudero",
     title: "Diseño para developers",
     description: "Qué es la arquitectura de software, cómo se diseña y por qué es importante para construir un buen producto.",
-    imageUrl: "",
+    imageUrl: "/speakers/speaker-01-tomas-escudero.jpg",
   },
   {
     id: 2,
     name: "Franco Díaz",
     title: "De cero a tu  primer proyecto",
     description: "Tu modelo mental es el arma secreta para dominar la programación. ¡Cambialo y crecé!",
-    imageUrl: "",
+    imageUrl: "/speakers/speaker-02-franco-diaz.jpg",
   },
   {
     id: 3,
     name: "Gastón",
     title: "Armá tu portfolio con IA",
     description: "Como usar asistentes de IA para construir y publicar un portfolio que muestre lo que sabes hacer",
-    imageUrl: "",
+    imageUrl: "/speakers/speaker-03-gaston.jpg",
   },
   {
     id: 4,
     name: "Mauro",
     title: "Git y GitHub sin miedo",
     description: "Los comandos que vas a usar todos los dias y cómo trabajar en equipo sin pisar el código de otros",
-    imageUrl: "",
+    imageUrl: "/speakers/speaker-04-mauro.jpg",
   },
   {
     id: 5,
     name: "José Díaz",
     title: "Tu primer backend con Node",
     description: "Cómo se arma una API, qué hace una base de datos y por donde empezar para conectar todo",
-    imageUrl: "",
+    imageUrl: "/speakers/speaker-05-jose-diaz.jpg",
   },
   {
     id: 6,
     name: "Tomás Gomez",
     title: "Preparate para tu primera entrevista",
     description: "Qué preguntan en una entrevista técnica, cómo practicar y cómo contar tus proyectos con claridad",
-    imageUrl: "",
+    imageUrl: "/speakers/speaker-06-tomas-gomez.jpg",
   },
   {
     id: 7,
     name: "Pablo Basso",
     title: "Mi primer trabajo en IT",
     description: "Una charla en primera persona sobre cómo se consigue el primer puesto y qué se aprende en los primeros meses",
-    imageUrl: "",
+    imageUrl: "/speakers/speaker-07-pablo-basso.jpg",
   },
   {
     id: 8,
     name: "Julian Martin",
     title: "Testing: cómo no romper todo",
     description: "Qué es testear, por qué importa y cómo escribir tus primeras pruebas sin complicarte",
-    imageUrl: "",
+    imageUrl: "/speakers/speaker-08-julian-martin.jpg",
   },
   {
     id: 9,
     name: "Daniela Cardozo",
     title: "Tu primer día como developer",
     description: "Qué esperar de tu primera semana en un equipo, qué herramientas usar y como pedir ayuda sin miedo",
-    imageUrl: "",
+    imageUrl: "/speakers/speaker-09-daniela-cardozo.jpg",
   },
   {
     id: 10,
     name: "Andres Perlo",
     title: "Tu primera base de datos",
     description: "Qué es una base de datos, para que sirve y como guardar y consultar tus primeros datos",
-    imageUrl: "",
+    imageUrl: "/speakers/speaker-10-andres-perlo.jpg",
   }
 
 ]
