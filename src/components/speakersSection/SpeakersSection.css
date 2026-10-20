@@ -1,10 +1,49 @@
-.hover-tarjeta {
+.hover-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid #2a2a2a; 
 }
 
-.hover-tarjeta:hover {
+.hover-card:hover {
   transform: translateY(-8px); 
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); 
   border-color: #e0202a; 
+}
+
+.speakerCardContainer {
+  background-color: #111113;
+  border-radius: 32px;
+  border: none;
+}
+
+.speakerImage {
+  border-radius: 24px;
+  height: 180px;
+}
+
+.speakerName {
+  font-size: 20px;
+  font-weight: 800;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #ffffff;
+}
+
+.speakerDescription {
+  color: #d4d4d8;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.speakerBadgeContainer {
+  height: 70px; 
+}
+
+.speakerBadge {
+  font-size: 14px;
+  font-weight: 800;
+  background-color: #e0202a;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  margin: 0;
 }
