@@ -1,0 +1,332 @@
+
+.checkout,
+.checkout *,
+.checkout *::before,
+.checkout *::after {
+  box-sizing: border-box;
+}
+
+.checkout {
+  margin-top: 56px;
+  padding-inline: var(--rc-container-padding);
+}
+
+.checkout button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.checkout button:focus-visible {
+  outline: 3px solid var(--rc-red);
+  outline-offset: 3px;
+}
+
+.checkoutContainer {
+  max-width: calc(var(--rc-container-max-width) + 2 * var(--rc-block-padding));
+  margin-inline: auto;
+  padding: var(--rc-block-padding);
+  background: var(--rc-gradient);
+  border-radius: var(--rc-radius-block);
+  color: var(--rc-white);
+}
+
+.checkoutHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.checkoutEyebrow {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: var(--rc-font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--rc-pink);
+}
+
+.checkoutTitle {
+  margin: 0;
+  font-size: clamp(34px, 4.5vw, 64px);
+  font-weight: var(--rc-font-weight-bold);
+  line-height: 1.03;
+  letter-spacing: -1px;
+  color: var(--rc-white);
+}
+
+.checkoutSteps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.step {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: var(--rc-font-weight-semibold);
+  color: var(--rc-white);
+  border: 1px solid var(--rc-white);
+  border-radius: var(--rc-radius-pill);
+}
+
+.stepActive {
+  background: var(--rc-black);
+  border-color: var(--rc-black);
+}
+
+.checkoutBody {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: var(--rc-card-gap);
+  align-items: start;
+}
+
+.panel {
+  padding: 32px;
+  border-radius: var(--rc-radius-box);
+}
+
+.panelLight {
+  background: var(--rc-white);
+  color: var(--rc-black);
+}
+
+.panelDark {
+  background: var(--rc-black);
+  color: var(--rc-white);
+  border: 1px solid var(--rc-border);
+}
+
+.panelTitle {
+  margin: 0 0 20px;
+  font-size: 22px;
+  font-weight: var(--rc-font-weight-bold);
+}
+
+.panelNote {
+  margin: 16px 0 0;
+  font-size: 14px;
+  font-weight: var(--rc-font-weight-regular);
+  color: var(--rc-text-on-white);
+}
+
+.tickets {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ticket {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 16px 20px;
+  text-align: left;
+  background: var(--rc-white);
+  color: var(--rc-black);
+  border: 2px solid var(--rc-border-input);
+  border-radius: var(--rc-radius-option);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.ticket:hover:not(:disabled) {
+  border-color: var(--rc-black);
+}
+
+.ticket.ticketActive {
+  background: var(--rc-black);
+  color: var(--rc-white);
+  border-color: var(--rc-black);
+}
+
+.ticket:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.ticketInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ticketName {
+  font-size: 18px;
+  font-weight: var(--rc-font-weight-bold);
+}
+
+.ticketDetails {
+  font-size: 14px;
+  font-weight: var(--rc-font-weight-regular);
+  color: var(--rc-text-on-white);
+}
+
+.ticketActive .ticketDetails {
+  color: var(--rc-text-mute);
+}
+
+.ticketPrice {
+  font-size: 20px;
+  font-weight: var(--rc-font-weight-bold);
+  white-space: nowrap;
+}
+
+.quantity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.quantityLabel {
+  margin: 0;
+  font-size: 16px;
+  font-weight: var(--rc-font-weight-semibold);
+}
+
+.quantityControls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.quantityBtn {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  font-size: 20px;
+  font-weight: var(--rc-font-weight-bold);
+  line-height: 1;
+  background: var(--rc-white);
+  color: var(--rc-black);
+  border: 2px solid var(--rc-border-input);
+  border-radius: var(--rc-radius-pill);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.quantityBtn:hover {
+  background: var(--rc-black);
+  color: var(--rc-white);
+  border-color: var(--rc-black);
+}
+
+.quantityValue {
+  min-width: 24px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: var(--rc-font-weight-bold);
+  font-variant-numeric: tabular-nums;
+}
+
+.btnContinue {
+  width: 100%;
+  min-height: 52px;
+  font-size: 18px;
+  font-weight: var(--rc-font-weight-bold);
+  color: var(--rc-white);
+  background: var(--rc-black);
+  border: none;
+  border-radius: var(--rc-radius-pill);
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btnContinue:hover {
+  background: var(--rc-surface-2);
+  transform: translateY(-1px);
+}
+
+.summaryEyebrow {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: var(--rc-font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--rc-red);
+}
+
+.summaryEvent {
+  margin: 0;
+  font-size: 24px;
+  font-weight: var(--rc-font-weight-bold);
+  line-height: 1.2;
+}
+
+.summaryMeta {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: var(--rc-text-mute);
+}
+
+/* Pisa los estilos de <hr> de Bootstrap */
+.summaryDivider {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid var(--rc-border);
+  opacity: 1;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: var(--rc-text-soft);
+}
+
+.summaryTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.summaryTotal span {
+  font-size: 18px;
+  font-weight: var(--rc-font-weight-bold);
+}
+
+.summaryTotal strong {
+  font-size: 40px;
+  font-weight: var(--rc-font-weight-bold);
+  line-height: 1;
+  letter-spacing: -1px;
+  font-variant-numeric: tabular-nums;
+}
+
+.summarySecure {
+  margin: 20px 0 0;
+  font-size: 14px;
+  color: var(--rc-text-mute);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991.98px) {
+  .checkoutBody {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .checkoutContainer {
+    padding: 32px 20px;
+  }
+
+  .panel {
+    padding: 24px 20px;
+  }
+
+  .ticketPrice {
+    font-size: 18px;
+  }
+
+  .summaryTotal strong {
+    font-size: 32px;
+  }
+}
