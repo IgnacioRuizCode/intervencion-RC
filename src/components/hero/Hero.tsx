@@ -1,4 +1,7 @@
 import "./Hero.css"
+import calendarIcon from "./../../assets/iconos/calendario.svg"
+import locationIcon from "./../../assets/iconos/ubicacion.svg"
+import ticketIcon from "./../../assets/iconos/entrada.svg"
 
 function Hero () {
 
@@ -24,7 +27,7 @@ function Hero () {
                 <div className="blackBox">
                     <div className="blackBoxFlex">
                         <div>
-                            <img className="iconBB" src="../../assets/iconos/calendario.svg" alt="hero-calendar" />
+                            <img className="iconBB" src={calendarIcon} alt="hero-calendar" />
                         </div>
                         <div>
                             <p className="textSup">JUE 19/11</p>
@@ -34,7 +37,7 @@ function Hero () {
                     <hr />
                     <div className="blackBoxFlex">
                         <div>
-                            <img className="iconBB" src="../../assets/iconos/ubicacion.svg" alt="hero-location" />
+                            <img className="iconBB" src={locationIcon} alt="hero-location" />
                         </div>
                         <div>
                             <p className="textSup">Rolling Code School</p>
@@ -44,7 +47,7 @@ function Hero () {
                     <hr />
                     <div className="blackBoxFlex">
                         <div>
-                            <img className="iconBB" src="../../assets/iconos/entrada.svg" alt="hero-ticket" />
+                            <img className="iconBB" src={ticketIcon} alt="hero-ticket" />
                         </div>
                         <div>
                             <p className="textSup">Entradas desde $15.000</p>
