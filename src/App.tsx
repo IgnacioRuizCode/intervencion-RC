@@ -1,5 +1,6 @@
 import './index.css'
 import Location from './components/location/Location'
+import Agenda from './components/schedule/agenda'
 import { SpeakersSection } from './components/speakersSection/SpeakersSection'
 import TicketSection from './components/tickets/TicketSection'
 
@@ -11,6 +12,7 @@ function App() {
     <>
     <SpeakersSection/>
     <TicketSection/>
+    <Agenda/>
     <Location/>
     </>
   )
