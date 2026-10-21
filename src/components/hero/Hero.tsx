@@ -30,8 +30,8 @@ function Hero () {
                             <img className="iconBB" src={calendarIcon} alt="hero-calendar" />
                         </div>
                         <div>
-                            <p className="textSup">JUE 19/11</p>
-                            <p className="textInf">18.00 hs</p>
+                            <p className="textSup textSupLg">JUE 19/11</p>
+                            <p className="textInf textInfLg">18.00 hs</p>
                         </div>
                     </div>
                     <hr />
@@ -40,8 +40,8 @@ function Hero () {
                             <img className="iconBB" src={locationIcon} alt="hero-location" />
                         </div>
                         <div>
-                            <p className="textSup">Rolling Code School</p>
-                            <p className="textInf">Gral. Paz 576, Entrepiso</p>
+                            <p className="textSup textSupLg">Rolling Code School</p>
+                            <p className="textInf textInfLg">Gral. Paz 576, Entrepiso</p>
                         </div>
                     </div>
                     <hr />
@@ -50,8 +50,8 @@ function Hero () {
                             <img className="iconBB" src={ticketIcon} alt="hero-ticket" />
                         </div>
                         <div>
-                            <p className="textSup">Entradas desde $15.000</p>
-                            <p className="textInf">Early Bird hasta el 31/10</p>
+                            <p className="textSup textSupLg">Entradas desde $15.000</p>
+                            <p className="textInf textInfLg">Early Bird hasta el 31/10</p>
                         </div>
                     </div>
                     <div className="pills">

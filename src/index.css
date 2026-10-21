@@ -40,3 +40,10 @@
   --rc-radius-field: 14px;
   --rc-radius-pill: 999px; /* Para botones y chips */
 }
+
+body {
+  margin: 0;
+  background-color: var(--rc-black);
+  color: var(--rc-white);
+  font-family: var(--rc-font-family);
+}
