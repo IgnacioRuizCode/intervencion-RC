@@ -1,0 +1,102 @@
+.stepText {
+  font-size: 14px;
+}
+.customInput {
+  background-color: var(--surface) !important;
+  border: 1px solid var(--rc-border) !important;
+  color: white !important;
+}
+.customInput:focus {
+  background-color: var(--surface) !important;
+  border-color: var(--rc-red) !important;
+  box-shadow: 0 0 0 0.25rem rgba(224, 32, 42, 0.25) !important;
+  color: white !important;
+}
+.invalid-feedback {
+  color: #ff4d4d;
+  font-weight: 500;
+  font-size: 0.875em;
+}
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--rc-surface);
+  z-index: 9999; 
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.modalContainer {
+  background-color: var(--rc-black);
+  width: 100%;
+  max-width: 600px; 
+  border-radius: 12px;
+  border: 1px solid var(--rc-border);
+  position: relative;
+  max-height: 90vh; 
+  overflow-y: auto; 
+}
+
+.btnCloseModal {
+  filter: invert(1) grayscale(100%) brightness(200%); 
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.btnCloseModal:hover {
+  opacity: 1;
+}
+
+.customInput {
+  background-color: var(--rc-surface-2) !important;
+  border: 1px solid var(--rc-border) !important; 
+  color: var(--rc-white) !important; 
+  border-radius: 6px;
+}
+
+.customInput:focus {
+  background-color: var(--rc-surface) !important;
+  border-color: var(--rc-red) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 0.25rem rgba(224, 32, 42, 0.25) !important;
+}
+
+.modalSubmitBtn {
+  background-color: var(--rc-red) !important; 
+  color: var(--rc-white) !important;
+  border: none !important;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.modalSubmitBtn:hover {
+  background-color: #c11b23 !important; 
+  color: var(--rc-white) !important;
+}
+
+.successIconWrapper {
+  background-color: rgba(40, 167, 69, 0.15);
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.ticketNameBadge {
+  color: var(--rc-red); 
+  font-weight: 800;
+  background-color: rgba(224, 32, 42, 0.15); 
+  padding: 4px 12px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-left: 6px;
+  border: 1px solid rgba(224, 32, 42, 0.3); 
+}
