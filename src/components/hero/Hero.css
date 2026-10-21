@@ -1,0 +1,250 @@
+
+.redBox {
+    width: min(1312px, 100% - 48px);   
+    min-height: 650px;
+    margin: 48px auto 0;              
+    box-sizing: border-box;
+    padding: 64px 56px;
+    gap: 48px;
+    display: flex;
+    align-items: center;
+    border-radius: var(--rc-radius-block);
+    background: var(--rc-gradient);
+    font-family: var(--rc-font-family);
+}
+
+.boxFlexLeft { flex: 1; min-width: 0; }
+.boxFlexRight { flex: 0 0 514px; }
+
+.subTitle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 8px;
+    font-size: 26px;
+}
+
+.subTitle p { margin: 0 0 16px; }
+
+.subTitleWS {
+    color: var(--rc-white);
+    font-weight: 300;
+    font-style: italic;
+}
+
+.subTitleEL {
+    color: var(--rc-white);
+    font-weight: var(--rc-font-weight-semibold);
+}
+
+.mainTitle {
+    margin: 0 0 24px;
+    font-size: clamp(40px, 6vw, 88px); 
+    line-height: 1.02;
+    letter-spacing: -1.5px;
+    font-weight: var(--rc-font-weight-bold);
+    color: var(--rc-white);
+}
+
+.mainTitleBlack { color: var(--rc-black); }
+
+.textDescription {
+    color: var(--rc-pink, #ffe9ea);
+    font-size: 20px;
+    line-height: 1.55;
+    max-width: 540px;
+    margin: 0 0 32px;
+}
+
+.btnGroup { display: flex; gap: 16px; }
+
+.btnBlack, .btnRed {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    border-radius: var(--rc-radius-pill);
+    font-size: 18px;
+    font-weight: var(--rc-font-weight-bold);
+    padding: 12px 32px;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btnBlack {
+    border: solid 2px var(--rc-black);
+    background-color: var(--rc-black);
+    color: var(--rc-white);
+}
+
+.btnRed {
+    border: solid 2px var(--rc-white);
+    background-color: transparent;
+    color: var(--rc-white);
+}
+
+.btnBlack,
+.btnRed {
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.btnBlack:hover {
+    background-color: var(--rc-white);
+    border-color: var(--rc-white);
+    color: var(--rc-black);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btnRed:hover {
+    background-color: var(--rc-white);
+    color: var(--rc-red);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btnBlack:active,
+.btnRed:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.btnBlack:focus-visible,
+.btnRed:focus-visible {
+    outline-offset: 3px;
+}
+
+.blackBox {
+    box-sizing: border-box;
+    padding: 40px;
+    border-radius: var(--rc-radius-box);
+    background-color: var(--rc-black);
+    color: var(--rc-white);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.blackBox hr {
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-top: 1px solid var(--rc-border);
+    opacity: 1;
+}
+
+.blackBoxFlex {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.iconBB {
+    width: 40px;
+    height: 40px;
+    display: block;
+    flex-shrink: 0;
+}
+
+.textSup, .textInf { margin: 0; }
+
+.textSup {
+    font-weight: var(--rc-font-weight-semibold);
+    font-size: 26px;
+}
+
+.textInf {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--rc-text-soft);
+}
+
+.textSupLg {
+    font-size: 32px;
+    font-weight: var(--rc-font-weight-bold);
+}
+
+.textInfLg {
+    font-size: 36px;
+    color: var(--rc-white);
+}
+
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.blackPill, .redPill {
+    display: inline-flex;
+    align-items: center;
+    border-radius: var(--rc-radius-pill);
+    font-size: 15px;
+    font-weight: var(--rc-font-weight-semibold);
+    padding: 8px 20px;
+}
+
+.blackPill {
+    border: 1px solid var(--rc-white);
+    background-color: transparent;
+    color: var(--rc-white);
+}
+
+.redPill {
+    border: 1px solid var(--rc-red);
+    background-color: var(--rc-red);
+    color: var(--rc-white);
+}
+
+@media (max-width: 1199px) {
+    .redBox {
+        flex-direction: column;
+        align-items: stretch;
+        min-height: 0;
+        gap: 40px;
+        padding: 48px 40px;
+    }
+
+    .boxFlexRight { flex: none; width: 100%; }
+
+    .textDescription { max-width: 640px; }
+
+    .blackBox { padding: 32px; }
+}
+
+@media (max-width: 575px) {
+    .redBox {
+        margin-top: 24px;
+        gap: 32px;
+        padding: 32px 24px;
+        border-radius: 32px;
+    }
+
+    .subTitle { font-size: 18px; }
+    .subTitle p { margin-bottom: 12px; }
+
+    .mainTitle {
+        font-size: clamp(32px, 9.5vw, 48px);
+        letter-spacing: -1px;
+        margin-bottom: 20px;
+    }
+
+    .textDescription {
+        font-size: 16px;
+        margin-bottom: 24px;
+    }
+
+    .btnGroup { flex-direction: column; gap: 12px; }
+    .btnBlack, .btnRed { width: 100%; font-size: 16px; }
+
+    .blackBox { padding: 24px; gap: 16px; border-radius: 24px; }
+    .blackBoxFlex { gap: 16px; }
+    .iconBB { width: 32px; height: 32px; }
+
+    .textSup { font-size: 20px; }
+    .textInf { font-size: 16px; }
+    .textSupLg { font-size: 24px; }
+    .textInfLg { font-size: 26px; }
+
+    .blackPill, .redPill { font-size: 14px; padding: 8px 16px; }
+}
