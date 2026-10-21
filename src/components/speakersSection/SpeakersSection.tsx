@@ -1,8 +1,7 @@
-import React from "react";
 import { SpeakerCard } from './SpeakerCard';
 import { speakersData } from './speakersData';
 
-const SpeakersSection: React.FC = () => {
+const SpeakersSection = () =>{
     return(
         <section className="container-fluid text-white py-5"
         style={{backgroundColor: '#0b0b0c'}}>

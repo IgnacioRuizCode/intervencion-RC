@@ -1,0 +1,97 @@
+.countdownContainer {
+  background-color: var(--rc-surface);
+  border: 1px solid var(--rc-border);
+  border-radius: 28px; 
+  padding: 32px;
+  margin-bottom: 32px;
+}
+
+.countdownEyebrow {
+  color: var(--rc-red);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.countdownHeading {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  color: var(--rc-white);
+}
+
+.countdownSubtext {
+  color: var(--rc-text-mute);
+  font-size: 14px;
+  margin: 0;
+}
+
+.timerWrapper {
+  display: flex;
+  gap: 16px;
+}
+
+.timerBox {
+  background-color: var(--rc-black);
+  border-radius: 18px; 
+  padding: 16px;
+  min-width: 80px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.timerNumber {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--rc-white);
+  margin-bottom: 4px;
+}
+
+.timerLabel {
+  font-size: 12px;
+  color: var(--rc-text-mute);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.progressWrapper {
+  width: 100%;
+  max-width: 300px; 
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.progressTextLeft {
+  color: var(--rc-white);
+  font-weight: 600;
+}
+
+.progressTextRight {
+  color: var(--rc-text-mute);
+}
+
+.progressBarTrack {
+  height: 6px;
+  background-color: var(--rc-surface-2);
+  border-radius: 999px;
+  width: 100%;
+}
+
+.progressBarFill {
+  height: 100%;
+  background-color: var(--rc-red);
+  border-radius: 999px;
+  width: 63%; 
+}
