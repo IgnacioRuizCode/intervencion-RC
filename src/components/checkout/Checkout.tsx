@@ -9,12 +9,10 @@ const tickets = [
 
 const format = (n: number) => "$" + n.toLocaleString("es-AR");
 
-// Los meses en JS empiezan en 0: 10 = noviembre
 const generalStartDate = new Date(2026, 10, 1);
 const now = new Date();
 const generalStarted = now >= generalStartDate;
 
-// Early Bird solo antes del 1/11. General solo desde el 1/11. Virtual siempre.
 const isTicketDisabled = (id: string) => {
   if (id === "early") return generalStarted;
   if (id === "general") return !generalStarted;
@@ -48,7 +46,7 @@ function Checkout() {
         </header>
 
         <div className="checkoutBody">
-          {/* LADO BLANCO */}
+
           <div className="panel panelLight">
             <p className="panelTitle">Elegí tu entrada</p>
 
@@ -94,7 +92,6 @@ function Checkout() {
             </p>
           </div>
 
-          {/* LADO NEGRO */}
           <div className="panel panelDark">
             <p className="summaryEyebrow">TU PEDIDO</p>
             <p className="summaryEvent">Workshop Rolling Code School</p>

@@ -263,7 +263,7 @@
   color: var(--rc-text-mute);
 }
 
-/* Pisa los estilos de <hr> de Bootstrap */
+
 .summaryDivider {
   margin: 20px 0;
   border: 0;
@@ -306,7 +306,7 @@
   color: var(--rc-text-mute);
 }
 
-/* ---------- Responsive ---------- */
+
 @media (max-width: 991.98px) {
   .checkoutBody {
     grid-template-columns: 1fr;
