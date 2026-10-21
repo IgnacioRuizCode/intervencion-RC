@@ -1,0 +1,50 @@
+.footer {
+  background-color: #0b0b0b;
+  padding: 0 40px;
+  border-radius: 0 0 24px 24px;
+}
+
+.footer__contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer__logo {
+  height: 65px;
+}
+
+.footer__redes {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer__redes a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 15px;
+  transition: background-color 0.2s;
+}
+
+.footer__redes a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 576px) {
+  .footer__contenido {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
