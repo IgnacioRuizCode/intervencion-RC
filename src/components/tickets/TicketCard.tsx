@@ -2,19 +2,20 @@ import './TicketSection.css';
 
 interface TicketProps {
     ticket: {
-        id: string;
-        title: string;
-        price: string;
-        originalPrice?: string;
-        badge: string;
-        subtitle: string;
-        features: string[];
-        isHighlighted: boolean;
-        buttonText: string;
-    };
+    id: string;
+    title: string;
+    price: string;
+    originalPrice?: string;
+    badge: string;
+    subtitle: string;
+    features: string[];
+    isHighlighted: boolean;
+    buttonText: string;
+  };
+      onOpenModal: (ticketName: string) => void;
 }
 
-const TicketCard = ({ ticket }: TicketProps) =>{
+const TicketCard = ({ ticket, onOpenModal }: TicketProps) =>{
 const cardClass = ticket.isHighlighted ? 'ticketCard highlighted' : 'ticketCard normal';
 const btnClass = ticket.isHighlighted ? 'ticketBtn solid w-100' : 'ticketBtn outline w-100';
 const badgeClass = ticket.isHighlighted ? 'badge rounded-pill ticketBadgeDark' : 'badge rounded-pill ticketBadgeLight';
@@ -55,7 +56,8 @@ const iconColor = ticket.isHighlighted ? '#ffffff' : '#e0202a';
         ))}
       </ul>
 
-      <button className={btnClass}>
+      <button className={btnClass}
+      onClick={() => onOpenModal(ticket.title)}>
         {ticket.buttonText}
       </button>
     </div>
