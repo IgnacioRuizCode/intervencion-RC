@@ -1,4 +1,3 @@
-import React from "react";
 import type { RCSpeaker } from "./types";
 import './SpeakersSection.css';
 
@@ -6,7 +5,7 @@ interface Props {
     speaker: RCSpeaker
 }
 
-const SpeakerCard: React.FC<Props> = ({ speaker }) => {
+const SpeakerCard = ({ speaker }: Props) =>{
     return (
         <div 
         className="card h-100 text-white p-3 hover-card speakerCardContainer"

@@ -1,4 +1,3 @@
-import React from "react";
 import './TicketSection.css';
 
 interface TicketProps {
@@ -15,7 +14,7 @@ interface TicketProps {
     };
 }
 
-const TicketCard: React.FC<TicketProps> = ({ ticket }) => {
+const TicketCard = ({ ticket }: TicketProps) =>{
 const cardClass = ticket.isHighlighted ? 'ticketCard highlighted' : 'ticketCard normal';
 const btnClass = ticket.isHighlighted ? 'ticketBtn solid w-100' : 'ticketBtn outline w-100';
 const badgeClass = ticket.isHighlighted ? 'badge rounded-pill ticketBadgeDark' : 'badge rounded-pill ticketBadgeLight';
