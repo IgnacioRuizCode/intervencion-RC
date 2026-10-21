@@ -1,10 +1,9 @@
-import React from "react";
 import  TicketCard  from './TicketCard';
 import TicketCountdown from "./TicketCountdown";
 import TicketData from './TicketData';
 import './TicketSection.css'
 
-const TicketSection: React.FC = () => {
+const TicketSection = () =>{
     return (
         <section className="py-5 sectionWrapper">
             <div className="container sectionContainer">
