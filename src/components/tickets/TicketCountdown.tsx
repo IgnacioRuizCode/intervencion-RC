@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import './TicketCountdown.css';
 
-const TicketCountdown: React.FC = () => {
+const TicketCountdown = () => {
     const [timeLeft, setTimeLeft] = useState({
         days: 0,
         hours: 0,
