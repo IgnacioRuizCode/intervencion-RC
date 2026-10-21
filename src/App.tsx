@@ -1,4 +1,4 @@
-import './App.css'
+import './index.css'
 import Location from './components/location/Location'
 import { SpeakersSection } from './components/speakersSection/SpeakersSection'
 import TicketSection from './components/tickets/TicketSection'
