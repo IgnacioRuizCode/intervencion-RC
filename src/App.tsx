@@ -7,6 +7,9 @@ import TicketSection from './components/tickets/TicketSection'
 import Checkout from './components/checkout/Checkout'
 import Navbar from './components/navbar/navbar'
 import Footer from './components/footer/footer'
+import Footer from './components/footer/footer'
+
+
 
 
 

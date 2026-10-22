@@ -45,6 +45,7 @@
   --rc-radius-field: 14px;
   --rc-radius-pill: 999px; /* Para botones y chips */
 }
+<<<<<<< HEAD
 
 body {
   margin: 0;
@@ -52,3 +53,5 @@ body {
   color: var(--rc-white);
   font-family: var(--rc-font-family);
 }
+=======
+>>>>>>> e570f00 (fix: update footer)
