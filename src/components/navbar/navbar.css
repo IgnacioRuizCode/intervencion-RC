@@ -4,15 +4,15 @@
   filter: invert(1);
 }
 body {
-  background-color: #0d0d0d;
+  background-color: var(--rc-black);
 }
 
 .logo-icon {
   width: 36px;
   height: 36px;
-  border: 2.5px solid #ffffff;
+  border: 2.5px solid var(--rc-white);
   border-radius: 50%;
-  color: #ffffff;
+  color: var(--rc-white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,7 +22,7 @@ body {
 }
 
 .brand-title {
-  color: #ffffff;
+  color: var(--rc-white);
   font-weight: 800;
   font-size: 16px;
   letter-spacing: -0.5px;
@@ -30,19 +30,19 @@ body {
 }
 
 .brand-subtitle {
-  color: #ebe9e9;
+  color: var(--rc-text-soft);
   font-weight: 600;
   font-size: 9px;
   letter-spacing: 1.5px;
   font-family: Arial, sans-serif;
 }
 .nav-link{
-  color:#fff
+  color:var(--rc-white)
 }
 
 .boton-comprar {
-  background-color: #e52421;
-  color: #fff;
+  background-color: var(--rc-red);
+  color: var(--rc-white);
   border-radius: 50px;
   font-weight: 600;
   font-size: 15px;
@@ -50,8 +50,8 @@ body {
 }
 
 .boton-comprar:hover {
-  background-color: #350807;
-  color: #fff;
+  background-color: var(--rc-red-deep);
+  color: var(--rc-white);
 }
 
 
