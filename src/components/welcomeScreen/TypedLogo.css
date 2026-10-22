@@ -1,0 +1,34 @@
+.welcome-logo {
+  position: relative;
+  z-index: 3;
+  display: inline-block;
+  max-width: 100%;
+  color: var(--welcome-red);
+  font-family: var(--welcome-font);
+  font-size: clamp(1.45rem, 5.2vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+  user-select: none;
+  transition: opacity 150ms ease;
+}
+
+.welcome-logo__char {
+  display: inline-block;
+  clip-path: inset(0 100% 0 0);
+  white-space: pre;
+  will-change: clip-path, transform;
+}
+
+.welcome-logo__char--sign {
+  color: var(--welcome-white);
+}
+
+.welcome-logo--reduced .welcome-logo__char {
+  clip-path: inset(0 0 0 0);
+}
+
+.welcome-logo--opening {
+  opacity: 0;
+}

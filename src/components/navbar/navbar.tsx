@@ -1,4 +1,4 @@
-import logo from "../assets/logo-blanco.svg";
+import logo from "../../assets/logo-blanco.svg";
 import "./navbar.css";
 
 function Navbar() {
