@@ -1,0 +1,43 @@
+.welcome-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.welcome-background__canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.welcome-background__symbol {
+  position: absolute;
+  left: var(--symbol-x);
+  top: var(--symbol-y);
+  color: var(--welcome-red);
+  font-family: ui-monospace, 'Cascadia Code', 'SFMono-Regular', Consolas, monospace;
+  font-size: var(--symbol-size);
+  font-weight: 700;
+  line-height: 1;
+  opacity: var(--symbol-opacity);
+  user-select: none;
+  will-change: transform;
+  animation: welcomeSymbolFloat var(--symbol-duration) ease-in-out var(--symbol-delay) infinite alternate;
+}
+
+@keyframes welcomeSymbolFloat {
+  from {
+    transform: translate3d(0, 0, 0) rotate(-4deg);
+  }
+
+  to {
+    transform: translate3d(var(--symbol-drift), -34px, 0) rotate(5deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-background__symbol {
+    animation: none;
+  }
+}

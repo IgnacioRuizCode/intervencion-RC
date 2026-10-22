@@ -1,0 +1,109 @@
+.welcome {
+  --welcome-black: #0a0a0a;
+  --welcome-red: #e10600;
+  --welcome-white: #ffffff;
+  --welcome-font: 'Bricolage Grotesque', system-ui, sans-serif;
+
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  overflow: hidden;
+  color: var(--welcome-white);
+  font-family: var(--welcome-font);
+  background: transparent;
+  cursor: pointer;
+}
+
+.welcome__backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--welcome-black);
+  opacity: 1;
+  transition: opacity 150ms ease;
+}
+
+.welcome--opening .welcome__backdrop {
+  opacity: 0;
+}
+
+.welcome__stage {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  padding-inline: clamp(12px, 4vw, 32px);
+}
+
+.welcome__signs {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.welcome__signs .welcome-logo__sign-copy {
+  color: var(--welcome-white) !important;
+}
+
+.welcome__glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(78vw, 720px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--welcome-red) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--welcome-red) 42%, transparent) 0%,
+    color-mix(in srgb, var(--welcome-red) 17%, transparent) 38%,
+    transparent 70%
+  );
+  filter: blur(28px);
+  opacity: 0.85;
+  transform: translate(-50%, -50%);
+  animation: welcomeGlowPulse 4.2s ease-in-out infinite;
+}
+
+.app-home {
+  position: relative;
+  min-height: 100vh;
+}
+
+.app-home--gated {
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+  clip-path: inset(50% 50% 50% 50%);
+}
+
+.app-home--gated .app-home__content {
+  transform: scale(1.12);
+  transform-origin: 50% 0;
+  opacity: 0;
+}
+
+@keyframes welcomeGlowPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: translate(-50%, -50%) scale(0.92);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome__glow {
+    animation: none;
+  }
+
+  .welcome__backdrop {
+    transition: none;
+  }
+}
