@@ -6,6 +6,7 @@ import ticketIcon from "./../../assets/iconos/entrada.svg"
 function Hero () {
 
     return (
+        <>
         <section className="redBox">
             <div className="boxFlexLeft">
                 <div className="subTitle">
@@ -62,6 +63,25 @@ function Hero () {
                 </div>
             </div>
         </section>
+        <section className="blackHero">
+                <div className="statItem">
+                    <p className="numbersHero">120</p>
+                    <p className="textHero2">lugares presenciales</p>
+                </div>
+                <div className="statItem">
+                    <p className="numbersHero">10</p>
+                    <p className="textHero2">charlas de speakers</p>
+                </div>
+                <div className="statItem">
+                    <p className="numbersHero">3 h 40</p>
+                    <p className="textHero2">de 18.00 a 21.40 hs</p>
+                </div>
+                <div className="statItem">
+                    <p className="numbersHero">2</p>
+                    <p className="textHero2">modalidades: presencial y virtual</p>
+                </div>
+            </section>
+    </>
     )
 }
 
