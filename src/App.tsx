@@ -22,8 +22,6 @@ function App() {
     <Checkout/>
     <Location/>
     <Footer/>
-
-
     </>
   )
 }
