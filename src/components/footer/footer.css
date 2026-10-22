@@ -1,5 +1,5 @@
 .footer {
-  background-color: #0b0b0b;
+  background-color: var(--rc-black);
   padding: 0 40px;
   border-radius: 0 0 24px 24px;
 }
@@ -9,7 +9,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 24px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--rc-border-chip);
 }
 
 .footer__logo {
@@ -31,15 +31,15 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background-color: rgba(255, 255, 255, 0.05);
-  color: #fff;
+  border: 1px solid var(--rc-border-chip);
+  background-color: var(--rc-surface);
+  color: var(--rc-white);
   font-size: 15px;
   transition: background-color 0.2s;
 }
 
 .footer__redes a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--rc-text-on-white);
 }
 
 @media (max-width: 576px) {

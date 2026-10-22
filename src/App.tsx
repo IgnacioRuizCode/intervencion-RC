@@ -6,7 +6,7 @@ import Hero from './components/hero/Hero'
 import TicketSection from './components/tickets/TicketSection'
 import Checkout from './components/checkout/Checkout'
 import Navbar from './components/navbar/navbar'
-
+import Footer from './components/footer/footer'
 
 
 
@@ -17,10 +17,11 @@ function App() {
     <Navbar/>
     <Hero/>
     <SpeakersSection/>
+    <Agenda/>
     <TicketSection/>
     <Checkout/>
-    <Agenda/>
     <Location/>
+    <Footer/>
 
 
     </>
