@@ -9,6 +9,8 @@ import Checkout from './components/checkout/Checkout'
 import Navbar from './components/navbar/navbar'
 import Footer from './components/footer/footer'
 import Welcome from './components/welcomeScreen/WelcomeScreem'
+import SponsorForm from './components/sponsorsform/sponsorsForm'
+
 
 function App() {
   const [welcomeVisible, setWelcomeVisible] = useState(true)
@@ -47,6 +49,7 @@ function App() {
           <Agenda />
           <TicketSection />
           <Checkout />
+          <SponsorForm/>
           <Location />
           <Footer />
         </div>
