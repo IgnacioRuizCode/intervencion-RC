@@ -1,6 +1,21 @@
 import './Sponsors.css'
 import {ArrowUpRight, Award, CreditCard, Crown, Cpu, Layers, Server} from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
+import GoogleCloud from '../../assets/speakers-logos/sponsors-GoogleCloud.webp'
+import AmazonWebServices from '../../assets/speakers-logos/sponsors-Amazon.webp'
+import MercadoLibre from '../../assets/speakers-logos/sponsors-MeLi.webp'
+import Microsoft from '../../assets/speakers-logos/sponsors-Microsoft.webp'
+import Github from '../../assets/speakers-logos/sponsors-Github.webp'
+import Globant from '../../assets/speakers-logos/sponsors-Globant.webp'
+import Auth0 from '../../assets/speakers-logos/sponsors-Auth0.webp'
+import Vercel from '../../assets/speakers-logos/sponsors-Versel.webp'
+import Supabase from '../../assets/speakers-logos/sponsors-Supabase.webp'
+import DigitalOcean from '../../assets/speakers-logos/sponsors-DigitalOcean.webp'
+import Cloudflare from '../../assets/speakers-logos/sponsors-Cloudflare.webp'
+import MongoDB from '../../assets/speakers-logos/sponsors-MongoDB.webp'
+import Docker from '../../assets/speakers-logos/sponsors-Docker.webp'
+import Stripe from '../../assets/speakers-logos/sponsors-Stripe.webp'
+import Postman from '../../assets/speakers-logos/sponsors-Postman.webp'
 
 
 type MainPartner = {
@@ -25,7 +40,7 @@ const mainPartners: MainPartner[] = [
     {
         name: 'Google Cloud',
         badge: 'LEAD CLOUD PARTNER',
-        logo: '../../',
+        logo: GoogleCloud,
         description:
             'Infraestructura global ultra-escalable, Gemini AI APIs y programas de formación profesional para devs.',
         categoryIcon: Cpu,
@@ -35,7 +50,7 @@ const mainPartners: MainPartner[] = [
     {
         name: 'Amazon Web Services',
         badge: 'INFRASTRUCTURE PARTNER',
-        logo: '',
+        logo: AmazonWebServices,
         description:
             'Servicios de nube, arquitecturas serverless y vouchers para certificaciones oficiales para la comunidad.',
         categoryIcon: Server,
@@ -45,7 +60,7 @@ const mainPartners: MainPartner[] = [
     {
         name: 'Mercado Libre',
         badge: 'FINTECH & E-COMMERCE',
-        logo: '/sponsors/mercado-libre.png',
+        logo: MercadoLibre,
         description:
             'El mayor ecosistema tech de Latinoamérica impulsando becas, hackathons y pasantías directas de empleo.',
         categoryIcon: CreditCard,
@@ -56,21 +71,21 @@ const mainPartners: MainPartner[] = [
 ]
 
 const goldPartners: SimplePartner[] = [
-    { name: 'Microsoft', role: 'Azure & Dev Tools', logo: '/sponsors/microsoft.png', tag: 'Enterprise' },
-    { name: 'GitHub', role: 'Open Source & Copilot', logo: '/sponsors/github.png', tag: 'Community' },
-    { name: 'Globant', role: 'Tech Reinvention', logo: '/sponsors/globant.png', tag: 'Global Talent' },
-    { name: 'Auth0', role: 'Identity & Security', logo: '/sponsors/auth0.png', tag: 'Security' },
-    { name: 'Vercel', role: 'Frontend Cloud & Next', logo: '/sponsors/vercel.png', tag: 'Deployment' },
+    { name: 'Microsoft', role: 'Azure & Dev Tools', logo: Microsoft, tag: 'Enterprise' },
+    { name: 'GitHub', role: 'Open Source & Copilot', logo: Github, tag: 'Community' },
+    { name: 'Globant', role: 'Tech Reinvention', logo: Globant, tag: 'Global Talent' },
+    { name: 'Auth0', role: 'Identity & Security', logo: Auth0, tag: 'Security' },
+    { name: 'Vercel', role: 'Frontend Cloud & Next', logo: Vercel, tag: 'Deployment' },
 ]
 
 const bronzePartners: SimplePartner[] = [
-    { name: 'Supabase', role: 'Open-source DB', logo: '/sponsors/supabase.png' },
-    { name: 'DigitalOcean', role: 'Cloud VPS', logo: '/sponsors/digitalocean.png' },
-    { name: 'Cloudflare', role: 'Edge & DNS', logo: '/sponsors/cloudflare.png' },
-    { name: 'MongoDB', role: 'Document DB', logo: '/sponsors/mongodb.png' },
-    { name: 'Docker', role: 'Containers', logo: '/sponsors/docker.png' },
-    { name: 'Stripe', role: 'Payments API', logo: '/sponsors/stripe.png' },
-    { name: 'Postman', role: 'API Platform', logo: '/sponsors/postman.png' },
+    { name: 'Supabase', role: 'Open-source DB', logo: Supabase },
+    { name: 'DigitalOcean', role: 'Cloud VPS', logo: DigitalOcean },
+    { name: 'Cloudflare', role: 'Edge & DNS', logo: Cloudflare },
+    { name: 'MongoDB', role: 'Document DB', logo: MongoDB },
+    { name: 'Docker', role: 'Containers', logo: Docker },
+    { name: 'Stripe', role: 'Payments API', logo: Stripe },
+    { name: 'Postman', role: 'API Platform', logo: Postman },
 ]
 
 function Sponsors() {
@@ -163,7 +178,6 @@ function Sponsors() {
                 </div>
             </div>
 
-            {/* ============ BRONZE TIER · NIVEL BRONCE ============ */}
             <div className='tier tier--bronze'>
                 <header className='tierHeader'>
                     <div className='tierIcon'>

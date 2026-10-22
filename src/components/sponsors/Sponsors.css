@@ -83,7 +83,7 @@
 
 .tierTitle {
   font-size: 1.25rem;
-  font-weight: var(--rc-font-weight-bold);
+  font-weight: var(--rc-font-weight-semibold);
   letter-spacing: 0.08em;
   color: var(--tier-color);
 }
@@ -95,7 +95,7 @@
   background-color: var(--tier-bg);
   color: var(--tier-color);
   font-size: 0.7rem;
-  font-weight: var(--rc-font-weight-bold);
+  font-weight: var(--rc-font-weight-semibold);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -195,7 +195,7 @@
   background-color: var(--sp-diamond-bg);
   color: var(--sp-diamond);
   font-size: 0.7rem;
-  font-weight: var(--rc-font-weight-bold);
+  font-weight: var(--rc-font-weight-semibold);
   letter-spacing: 0.06em;
 }
 
@@ -239,7 +239,7 @@
 
 .mainCardName {
   font-size: 1.9rem;
-  font-weight: var(--rc-font-weight-bold);
+  font-weight: var(--rc-font-weight-semibold);
   letter-spacing: -0.02em;
   line-height: 1.1;
 }
@@ -275,7 +275,7 @@
 .mainCardHighlight {
   font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
   font-size: 0.75rem;
-  font-weight: var(--rc-font-weight-bold);
+  font-weight: var(--rc-font-weight-semibold);
   color: var(--sp-diamond);
 }
 
@@ -313,7 +313,7 @@
 
 .goldCardName {
   font-size: 1rem;
-  font-weight: var(--rc-font-weight-bold);
+  font-weight: var(--rc-font-weight-semibold);
 }
 
 .goldCardRole {
@@ -356,7 +356,7 @@
 
 .bronzeCardName {
   font-size: 0.9rem;
-  font-weight: var(--rc-font-weight-bold);
+  font-weight: var(--rc-font-weight-semibold);
 }
 
 .bronzeCardRole {
