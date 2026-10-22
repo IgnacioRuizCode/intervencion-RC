@@ -22,9 +22,9 @@
 }
 
 .checkoutContainer {
-  max-width: calc(var(--rc-container-max-width) + 2 * var(--rc-block-padding));
+  width: min(1200px, 100% - 48px);
   margin-inline: auto;
-  padding: var(--rc-block-padding);
+  padding: 32px;
   background: var(--rc-gradient);
   border-radius: var(--rc-radius-block);
   color: var(--rc-white);
@@ -36,7 +36,7 @@
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 24px;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 
 .checkoutEyebrow {
@@ -50,7 +50,7 @@
 
 .checkoutTitle {
   margin: 0;
-  font-size: clamp(34px, 4.5vw, 64px);
+  font-size: clamp(32px, 4vw, 48px);
   font-weight: var(--rc-font-weight-bold);
   line-height: 1.03;
   letter-spacing: -1px;
@@ -85,7 +85,7 @@
 }
 
 .panel {
-  padding: 32px;
+  padding: 24px;
   border-radius: var(--rc-radius-box);
 }
 
@@ -98,11 +98,12 @@
   background: var(--rc-black);
   color: var(--rc-white);
   border: 1px solid var(--rc-border);
+  border-radius: var(--rc-radius-card);
 }
 
 .panelTitle {
-  margin: 0 0 20px;
-  font-size: 22px;
+  margin: 0 0 16px;
+  font-size: 18px;
   font-weight: var(--rc-font-weight-bold);
 }
 
@@ -116,7 +117,7 @@
 .tickets {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 
 .ticket {
@@ -125,7 +126,7 @@
   align-items: center;
   gap: 16px;
   width: 100%;
-  padding: 16px 20px;
+  padding: 12px 16px;
   text-align: left;
   background: var(--rc-white);
   color: var(--rc-black);
@@ -156,7 +157,7 @@
 }
 
 .ticketName {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: var(--rc-font-weight-bold);
 }
 
@@ -171,7 +172,7 @@
 }
 
 .ticketPrice {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: var(--rc-font-weight-bold);
   white-space: nowrap;
 }
@@ -181,7 +182,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  margin: 24px 0;
+  margin: 16px 0;
 }
 
 .quantityLabel {
@@ -226,8 +227,8 @@
 
 .btnContinue {
   width: 100%;
-  min-height: 52px;
-  font-size: 18px;
+  min-height: 48px;
+  font-size: 16px;
   font-weight: var(--rc-font-weight-bold);
   color: var(--rc-white);
   background: var(--rc-black);
@@ -252,7 +253,7 @@
 
 .summaryEvent {
   margin: 0;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: var(--rc-font-weight-bold);
   line-height: 1.2;
 }
@@ -265,7 +266,7 @@
 
 
 .summaryDivider {
-  margin: 20px 0;
+  margin: 16px 0;
   border: 0;
   border-top: 1px solid var(--rc-border);
   opacity: 1;
@@ -275,7 +276,7 @@
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   font-size: 16px;
   color: var(--rc-text-soft);
 }
@@ -293,7 +294,7 @@
 }
 
 .summaryTotal strong {
-  font-size: 40px;
+  font-size: 32px;
   font-weight: var(--rc-font-weight-bold);
   line-height: 1;
   letter-spacing: -1px;
@@ -301,7 +302,7 @@
 }
 
 .summarySecure {
-  margin: 20px 0 0;
+  margin: 12px 0 0;
   font-size: 14px;
   color: var(--rc-text-mute);
 }
@@ -328,5 +329,11 @@
 
   .summaryTotal strong {
     font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .checkoutTitle {
+    font-size: 40px;
   }
 }
