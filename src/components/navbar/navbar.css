@@ -60,3 +60,10 @@ body {
     gap: 1rem;
   }
 }
+
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--rc-black);
+}
