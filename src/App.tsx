@@ -1,7 +1,10 @@
-import './App.css'
+import './app.css'
 import Location from './components/location/Location'
 import Agenda from './components/schedule/agenda'
 import { SpeakersSection } from './components/speakersSection/SpeakersSection'
+import Footer from './components/footer/footer'
+
+
 
 
 
@@ -12,6 +15,7 @@ function App() {
     <SpeakersSection/>
     <Agenda/>
     <Location/>
+    <Footer/>
     </>
   )
 }
