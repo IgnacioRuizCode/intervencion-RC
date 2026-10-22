@@ -1,9 +1,21 @@
 import './footer.css'
+import type { ReactNode } from 'react'
 import logo from '../../assets/logo-blanco.svg'
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaYoutube, FaGithub } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 
-const redes = [
+interface Red {
+  nombre: string
+  icono: ReactNode
+  url: string
+}
+
+interface EnlaceLegal {
+  texto: string
+  url: string
+}
+
+const redes: Red[] = [
   { nombre: 'Instagram', icono: <FaInstagram />, url: 'https://www.instagram.com/rollingcodeschool?rpxt=dzhwc2Q1Zm84Z2Vx' },
   { nombre: 'Facebook', icono: <FaFacebookF />, url: 'https://www.facebook.com/share/1F2HF6BT4Y/' },
   { nombre: 'LinkedIn', icono: <FaLinkedinIn />, url: 'https://www.linkedin.com/school/rollingcodeschool' },
@@ -12,7 +24,14 @@ const redes = [
   { nombre: 'GitHub', icono: <FaGithub />, url: 'https://github.com/' },
 ]
 
+const enlacesLegales: EnlaceLegal[] = [
+  { texto: 'Términos y condiciones', url: '#' },
+  { texto: 'Política de privacidad', url: '#' },
+]
+
 function Footer() {
+  const anio: number = new Date().getFullYear()
+
   return (
     <footer className="footer">
       <div className="footer__contenido">
@@ -27,6 +46,19 @@ function Footer() {
             </li>
           ))}
         </ul>
+      </div>
+      <div className="footer__legal">
+        <ul className="footer__links">
+          {enlacesLegales.map((enlace) => (
+            <li key={enlace.texto}>
+              <a href={enlace.url}>{enlace.texto}</a>
+            </li>
+          ))}
+        </ul>
+
+        <p className="footer__copyright">
+          © {anio} Rolling Code School. Todos los derechos reservados.
+        </p>
       </div>
     </footer>
   )
