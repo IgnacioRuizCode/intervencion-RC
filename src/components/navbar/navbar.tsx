@@ -29,13 +29,13 @@ function Navbar() {
         <div className={`collapse navbar-collapse justify-content-end ${isMenuOpen ? 'show' : ''}`} id="menu">
           <ul className="navbar-nav align-items-lg-center text-center">
             <li className="nav-item">
-              <a className="nav-link" href="#speakers" onClick={closeMenu}>Speakers</a>
+              <a className="nav-link" href="#speakersSection" onClick={closeMenu}>Speakers</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#agenda" onClick={closeMenu}>Agenda</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#como-llegar" onClick={closeMenu}>Cómo llegar</a>
+              <a className="nav-link" href="#location" onClick={closeMenu}>Cómo llegar</a>
             </li>
             <li className="nav-item ms-lg-3">
               <a className="btn boton-comprar" href="#checkout" onClick={closeMenu}>Comprar entrada</a>
