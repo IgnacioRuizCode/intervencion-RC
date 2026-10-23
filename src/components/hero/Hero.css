@@ -261,7 +261,8 @@
     .subTitle p { margin-bottom: 12px; }
 
     .mainTitle {
-        font-size: 48px;
+        font-size: 36px;
+        line-height: 1.1;
         letter-spacing: -1.5px;
         margin-bottom: 20px;
     }
