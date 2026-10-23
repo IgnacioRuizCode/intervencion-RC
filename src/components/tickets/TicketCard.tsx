@@ -12,10 +12,9 @@ interface TicketProps {
     isHighlighted: boolean;
     buttonText: string;
   };
-      onOpenModal: (ticketName: string) => void;
 }
 
-const TicketCard = ({ ticket, onOpenModal }: TicketProps) =>{
+const TicketCard = ({ ticket }: TicketProps) =>{
 const cardClass = ticket.isHighlighted ? 'ticketCard highlighted' : 'ticketCard normal';
 const btnClass = ticket.isHighlighted ? 'ticketBtn solid w-100' : 'ticketBtn outline w-100';
 const badgeClass = ticket.isHighlighted ? 'badge rounded-pill ticketBadgeDark' : 'badge rounded-pill ticketBadgeLight';
@@ -56,8 +55,7 @@ const iconColor = ticket.isHighlighted ? '#ffffff' : '#e0202a';
         ))}
       </ul>
 
-      <button className={btnClass}
-      onClick={() => onOpenModal(ticket.title)}>
+      <button className={btnClass} onClick={() => document.getElementById('checkout')?.scrollIntoView({ behavior: 'smooth' })}>
         {ticket.buttonText}
       </button>
     </div>

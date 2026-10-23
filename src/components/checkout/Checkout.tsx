@@ -31,7 +31,7 @@ function Checkout() {
   const total = subtotal + service;
 
   return (
-    <section className="checkout">
+    <section id="checkout" className="checkout">
       <div className="checkoutContainer">
         
         <header className="checkoutHeader">

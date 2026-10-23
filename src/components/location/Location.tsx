@@ -4,7 +4,7 @@ import ubicacion from "../../assets/iconos/ubicacion.svg";
 
 export const Location = () => {
   return (
-    <div className="howToArriveMainDiv">
+    <div id="location" className="howToArriveMainDiv">
       <div className="leftPartLocation">
         <p className="howToArriveText">CÓMO LLEGAR</p>
         <h2 className="mainTitle">Te esperamos en Rolling Code School</h2>
