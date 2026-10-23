@@ -24,7 +24,7 @@ interface ErroresSponsor {
 }
 
 
-const niveles: string[] = ['Oro', 'Plata', 'Bronce']
+const niveles: string[] = ['Diamante', 'Gold', 'Bronze']
 
 const tiposLogoPermitidos: string[] = [
   'image/png',
@@ -96,7 +96,6 @@ function SponsorForm() {
   ) => {
     const { name, value } = e.target
     setDatos({ ...datos, [name]: value })
-    // al escribir, se borra el error de ese campo
     setErrores({ ...errores, [name]: '' })
     setEnviado(false)
   }
