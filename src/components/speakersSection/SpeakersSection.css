@@ -53,42 +53,64 @@
   margin: 0;
 }
 
-/* Asumiendo que tu contenedor padre tiene la clase .speakersList y los hijos .speakerItem */
-
 @media (max-width: 767px) {
-  /* Forzamos el contenedor a ser una fila scrolleable */
-  .speakersList {
-    display: flex !important;
+  .speakersList.row {
     flex-wrap: nowrap !important; 
     overflow-x: auto !important;
     overflow-y: hidden !important;
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    gap: 16px;
-    padding-bottom: 24px;
-    margin: 0 !important; /* Mata los márgenes negativos de Bootstrap */
+    margin: 0 !important; 
   }
 
-  /* Barras de scroll */
-  .speakersList::-webkit-scrollbar {
+  .speakersList.row::-webkit-scrollbar {
     height: 4px;
   }
-  .speakersList::-webkit-scrollbar-track {
+  .speakersList.row::-webkit-scrollbar-track {
     background: var(--rc-border);
-    border-radius: 10px;
   }
-  .speakersList::-webkit-scrollbar-thumb {
+  .speakersList.row::-webkit-scrollbar-thumb {
     background: var(--rc-red);
-    border-radius: 10px;
   }
 
-  /* Forzamos el ancho exacto ignorando a col-12 */
-  .speakerItem {
-    min-width: 85% !important; /* CLAVE: Obliga a que no se aplaste ni se caiga */
-    max-width: 85% !important; 
+  .speakersList.row > .speakerItem {
     flex: 0 0 85% !important; 
+    max-width: 85% !important; 
     scroll-snap-align: center;
-    padding: 0 !important;
   }
+}
+
+@media (min-width: 768px) {
+  .speakersList.row {
+    flex-wrap: wrap !important;
+    overflow: visible !important;
+  }
+  
+  .speakersList.row > .speakerItem {
+    flex: auto;
+    max-width: none;
+    min-width: 0;
+  }
+}
+
+.speakersSectionBg {
+  background-color: var(--rc-black);
+}
+
+.speakersContainer {
+  max-width: 1200px;
+}
+
+.speakersSubtitle {
+  color: var(--rc-red);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.speakersSectionTitle {
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 800;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  line-height: 1.2;
 }
