@@ -4,7 +4,7 @@ import './SpeakersSection.css';
 
 const SpeakersSection = () => {
     return (
-        <section className="container-fluid text-white py-5 speakersSectionBg">
+        <section id='speakersSection' className="container-fluid text-white py-5 speakersSectionBg">
             <div className="mx-auto speakersContainer">
                 
                 <div className="mb-5">

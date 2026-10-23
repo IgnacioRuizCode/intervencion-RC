@@ -20,8 +20,8 @@ function Hero () {
                     <p className="textDescription">Una tarde con diez speakers de Rolling Code School para ordenar tus primeros pasos: qué aprender, cómo practicar y cómo mostrar lo que sabes.</p>
                 </div>
                 <div className="btnGroup">
-                    <a className="btnBlack" href="#">Comprar entrada</a>
-                    <a className="btnRed" href="#">Ver agenda</a>
+                    <a className="btnBlack" href="#checkout">Comprar entrada</a>
+                    <a className="btnRed" href="#agenda">Ver agenda</a>
                 </div>
             </div>
             <div className="boxFlexRight">
