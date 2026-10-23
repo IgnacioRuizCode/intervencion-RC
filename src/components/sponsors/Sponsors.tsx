@@ -22,6 +22,7 @@ type MainPartner = {
     name: string
     badge: string
     logo: string
+    url: string
     description: string
     categoryIcon: LucideIcon
     category: string
@@ -41,6 +42,7 @@ const mainPartners: MainPartner[] = [
         name: 'Google Cloud',
         badge: 'LEAD CLOUD PARTNER',
         logo: GoogleCloud,
+        url: 'https://cloud.google.com/?hl=es',
         description:
             'Infraestructura global ultra-escalable, Gemini AI APIs y programas de formación profesional para devs.',
         categoryIcon: Cpu,
@@ -51,6 +53,7 @@ const mainPartners: MainPartner[] = [
         name: 'Amazon Web Services',
         badge: 'INFRASTRUCTURE PARTNER',
         logo: AmazonWebServices,
+        url: 'https://aws.amazon.com/es/',
         description:
             'Servicios de nube, arquitecturas serverless y vouchers para certificaciones oficiales para la comunidad.',
         categoryIcon: Server,
@@ -61,6 +64,7 @@ const mainPartners: MainPartner[] = [
         name: 'Mercado Libre',
         badge: 'FINTECH & E-COMMERCE',
         logo: MercadoLibre,
+        url: 'https://www.mercadolibre.com.ar/',
         description:
             'El mayor ecosistema tech de Latinoamérica impulsando becas, hackathons y pasantías directas de empleo.',
         categoryIcon: CreditCard,
@@ -119,7 +123,9 @@ function Sponsors() {
                                 <div className='mainCardTop'>
                                     <span className='mainCardBadge'>{partner.badge}</span>
                                     <a
-                                        href='#'
+                                        href={partner.url}
+                                        target='_blank'
+                                        rel='noopener noreferrer'
                                         className='mainCardLink'
                                         aria-label={`Ver más sobre ${partner.name}`}
                                     >
