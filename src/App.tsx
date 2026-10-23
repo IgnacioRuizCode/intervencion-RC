@@ -11,8 +11,8 @@ import Footer from './components/footer/footer'
 import Welcome from './components/welcomeScreen/WelcomeScreem'
 import Sponsors from './components/sponsors/Sponsors'
 import SponsorForm from './components/sponsorsform/sponsorsForm'
+import ButtonWsp from './components/buttonwsp/buttonWsp'
 
-import ButtonWsp from './components/buttonwsp/buttonwsp'
 
 function App() {
   const [welcomeVisible, setWelcomeVisible] = useState(true)
