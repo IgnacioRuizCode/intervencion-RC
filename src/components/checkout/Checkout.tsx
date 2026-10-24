@@ -75,10 +75,24 @@ function Checkout() {
                 <div className="quantity">
                   <p className="quantityLabel">Cantidad</p>
                   <div className="quantityControls">
-                    <button className="quantityBtn" onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}>-</button>
-                    <span className="quantityValue">{quantity}</span>
-                    <button className="quantityBtn" onClick={() => setQuantity((prev) => prev + 1)}>+</button>
-                  </div>
+  <button className="quantityBtn" onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}>-</button>
+  <input 
+    type="number" 
+    className="quantityValue" 
+    value={quantity} 
+    onChange={(e) => setQuantity(Math.max(1, Number(e.target.value)))}
+    min="1"
+    style={{ 
+      width: '60px', 
+      textAlign: 'center', 
+      border: 'none', 
+      background: 'transparent',
+      color: 'inherit',
+      outline: 'none'
+    }}
+  />
+  <button className="quantityBtn" onClick={() => setQuantity((prev) => prev + 1)}>+</button>
+</div>
                 </div>
 
                 <button className="btnContinue" onClick={() => setStep(2)}>Continuar</button>
