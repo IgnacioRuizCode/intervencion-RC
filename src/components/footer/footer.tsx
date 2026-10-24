@@ -49,16 +49,23 @@ function Footer() {
         </ul>
       </div>
 
-      <div className="footer__legal d-flex flex-column flex-md-row align-items-center justify-content-md-between text-center text-md-start px-3 px-md-0 mt-md-4">
-        <ul className="footer__links d-flex flex-row flex-wrap justify-content-center gap-3 p-0 mb-2 mb-md-0" style={{ listStyle: 'none' }}>
+      <div className="footer__legal d-flex flex-column flex-md-row align-items-center justify-content-md-between text-center text-md-start px-2 px-md-0 mt-md-4">
+        
+        <ul className="footer__links d-flex flex-row flex-nowrap justify-content-center gap-2 gap-md-3 p-0 mb-2 mb-md-0" style={{ listStyle: 'none' }}>
           {enlacesLegales.map((enlace) => (
             <li key={enlace.texto}>
-              <a href={enlace.url} className="text-white text-decoration-none">{enlace.texto}</a>
+              <a 
+                href={enlace.url} 
+                className="text-white text-decoration-none" 
+                style={{ fontSize: '0.85rem' }} 
+              >
+                {enlace.texto}
+              </a>
             </li>
           ))}
         </ul>
 
-        <p className="footer__copyright mb-0 mt-2 mt-md-0">
+        <p className="footer__copyright mb-0 mt-2 mt-md-0" style={{ fontSize: '0.85rem' }}>
           © {anio} Rolling Code School. Todos los derechos reservados.
         </p>
       </div>
