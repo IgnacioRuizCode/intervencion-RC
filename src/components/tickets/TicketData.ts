@@ -1,6 +1,6 @@
 const ticketsData = [
   {
-    id: 'early-bird',
+    id: 'early',
     title: 'Early Bird',
     price: '$25.000',
     originalPrice: '$35.000',

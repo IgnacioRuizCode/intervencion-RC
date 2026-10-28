@@ -9,7 +9,7 @@ function Navbar() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark barra">
+    <nav className="navbar navbar-expand-lg navbar-dark barra sticky-top">
       <div className="container">
         
         <a className="navbar-brand" href="#inicio" onClick={closeMenu}>

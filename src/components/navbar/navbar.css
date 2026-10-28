@@ -64,6 +64,6 @@ body {
 .navbar{
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 1030;
   background-color: var(--rc-black);
 }
