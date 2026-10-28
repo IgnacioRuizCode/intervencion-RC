@@ -1,5 +1,9 @@
 import "./Checkout.css";
 import { useState, type FormEvent, type ChangeEvent } from "react";
+import Cards, { type Focused } from 'react-credit-cards-2';
+import 'react-credit-cards-2/dist/es/styles-compiled.css';
+import QRCode from "react-qr-code";
+import { useEffect } from "react";
 
 const tickets = [
   { id: "early", name: "Early Bird", details: "Presencial · hasta el 31/10", price: 25000 },
@@ -18,14 +22,24 @@ const isTicketDisabled = (id: string) => {
   if (id === "general") return !generalStarted;
   return false;
 };
-
 function Checkout() {
   const [step, setStep] = useState(1); 
-  
   const [ticketId, setTicketId] = useState(generalStarted ? "general" : "early");
   const [quantity, setQuantity] = useState(1);
 
-  const selectedTicket = tickets.find((ticket) => ticket.id === ticketId)!;
+  useEffect(() => {
+    const handleTicketSelect = (e: Event) => {
+      const customEvent = e as CustomEvent;
+      setTicketId(customEvent.detail);
+      setStep(1); 
+    };
+
+    window.addEventListener('selectTicket', handleTicketSelect);
+    
+    return () => window.removeEventListener('selectTicket', handleTicketSelect);
+  }, []);
+
+  const selectedTicket = tickets.find((ticket) => ticket.id === ticketId) || tickets[1];
   const subtotal = selectedTicket.price * quantity;
   const service = subtotal * 0.05;
   const total = subtotal + service;
@@ -109,7 +123,7 @@ function Checkout() {
             )}
 
             {step === 4 && (
-              <Step4Exito/>
+              <Step4Exito ticketName={selectedTicket.name} quantity={quantity} />
             )}
 
           </div>
@@ -313,11 +327,14 @@ function Step2Datos({ onNext, onBack }: { onNext: () => void, onBack: () => void
 
 function Step3Pago({ onNext, onBack }: { onNext: () => void, onBack: () => void }) {
   const [isProcessing, setIsProcessing] = useState(false);
+  const [focus, setFocus] = useState<Focused | undefined>(undefined);
+  const [errorMsg, setErrorMsg] = useState("");
+  
   const [cardData, setCardData] = useState({
     number: '',
     name: '',
     expiry: '',
-    cvv: ''
+    cvc: ''
   });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -325,10 +342,40 @@ function Step3Pago({ onNext, onBack }: { onNext: () => void, onBack: () => void 
       ...cardData,
       [e.target.name]: e.target.value
     });
+    if (errorMsg) setErrorMsg("");
+  };
+
+  const handleInputFocus = (e: React.FocusEvent<HTMLInputElement>) => {
+    setFocus(e.target.name as Focused);
   };
 
   const handlePay = (e: FormEvent) => {
     e.preventDefault(); 
+    setErrorMsg("");
+
+    if (!/^\d{2}\/\d{2}$/.test(cardData.expiry)) {
+      setErrorMsg("El vencimiento debe tener el formato MM/AA");
+      return;
+    }
+
+    const [mesStr, anioStr] = cardData.expiry.split('/');
+    const mes = parseInt(mesStr, 10);
+    const anio = parseInt(`20${anioStr}`, 10); 
+
+    if (mes < 1 || mes > 12) {
+      setErrorMsg("El mes ingresado no es válido.");
+      return;
+    }
+
+    const hoy = new Date();
+    const anioActual = hoy.getFullYear();
+    const mesActual = hoy.getMonth() + 1;
+
+    if (anio < anioActual || (anio === anioActual && mes < mesActual)) {
+      setErrorMsg("La tarjeta ingresada está vencida.");
+      return;
+    }
+
     setIsProcessing(true);
     
     setTimeout(() => {
@@ -341,6 +388,16 @@ function Step3Pago({ onNext, onBack }: { onNext: () => void, onBack: () => void 
     <div>
       <p className="panelTitle mb-4">Medio de Pago</p>
       
+      <div className="mb-4">
+        <Cards
+          number={cardData.number}
+          expiry={cardData.expiry}
+          cvc={cardData.cvc}
+          name={cardData.name}
+          focused={focus}
+        />
+      </div>
+      
       <form onSubmit={handlePay} className="d-flex flex-column gap-3">
         <div className="formGroup">
           <label className="formLabel">Número de Tarjeta</label>
@@ -352,6 +409,7 @@ function Step3Pago({ onNext, onBack }: { onNext: () => void, onBack: () => void 
             maxLength={19}
             value={cardData.number}
             onChange={handleChange}
+            onFocus={handleInputFocus}
             required
           />
         </div>
@@ -365,6 +423,7 @@ function Step3Pago({ onNext, onBack }: { onNext: () => void, onBack: () => void 
             placeholder="Tal como aparece en la tarjeta"
             value={cardData.name}
             onChange={handleChange}
+            onFocus={handleInputFocus}
             required
           />
         </div>
@@ -375,11 +434,12 @@ function Step3Pago({ onNext, onBack }: { onNext: () => void, onBack: () => void 
             <input 
               type="text" 
               name="expiry"
-              className="form-control customInput" 
+              className={`form-control customInput ${errorMsg ? 'is-invalid' : ''}`} 
               placeholder="MM/AA"
               maxLength={5}
               value={cardData.expiry}
               onChange={handleChange}
+              onFocus={handleInputFocus}
               required
             />
           </div>
@@ -387,16 +447,23 @@ function Step3Pago({ onNext, onBack }: { onNext: () => void, onBack: () => void 
             <label className="formLabel">Código de Seguridad</label>
             <input 
               type="password" 
-              name="cvv"
+              name="cvc" 
               className="form-control customInput" 
-              placeholder="CVV"
+              placeholder="CVC"
               maxLength={4}
-              value={cardData.cvv}
+              value={cardData.cvc}
               onChange={handleChange}
+              onFocus={handleInputFocus} 
               required
             />
           </div>
         </div>
+
+        {errorMsg && (
+          <div className="text-danger mt-2" style={{ fontSize: '0.9rem', fontWeight: '500' }}>
+            {errorMsg}
+          </div>
+        )}
 
         <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
           <button 
@@ -421,18 +488,74 @@ function Step3Pago({ onNext, onBack }: { onNext: () => void, onBack: () => void 
   );
 }
 
-function Step4Exito() {
+function Step4Exito({ ticketName, quantity }: { ticketName: string, quantity: number }) {
+  const reservationData = JSON.parse(localStorage.getItem('ticketReservation') || '{}');
+  const user = reservationData.user || { nombre: 'Invitado', apellido: '', documento: '00000000' };
+  
+const [ticketId] = useState(() => `RC-${user.documento.slice(-4)}-${Math.floor(1000 + Math.random() * 9000)}`);
+const qrData = `EVENTO:Workshop-RollingCode|DNI:${user.documento}|TICKET:${ticketId}|TIPO:${ticketName}`;
+
   return (
-    <div style={{ textAlign: 'center', padding: '2rem 0' }}>
-      <div className="successIconWrapper mb-4 d-flex justify-content-center">
+    <div style={{ textAlign: 'center', padding: '1rem 0' }}>
+      <div className="successIconWrapper mb-3 d-flex justify-content-center">
         <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#28a745" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
           <polyline points="22 4 12 14.01 9 11.01"></polyline>
         </svg>
       </div>
       <h3 style={{ color: '#28a745', fontWeight: 'bold' }}>¡Compra exitosa!</h3>
-      <p>Tus entradas ya están confirmadas.</p>
-      <button className="btnContinue" style={{ marginTop: '20px' }} onClick={() => window.location.href = "/"}>
+      <p className="text-muted mb-4">Presentá este código QR en la entrada del evento.</p>
+
+      <div 
+        className="ticket-card mx-auto text-start" 
+        style={{ 
+          maxWidth: '320px', 
+          backgroundColor: '#fff', 
+          borderRadius: '16px', 
+          boxShadow: '0 10px 30px rgba(0,0,0,0.15)',
+          overflow: 'hidden',
+          color: '#1a1a1a'
+        }}
+      >
+        <div style={{ backgroundColor: '#e10600', padding: '15px 20px', textAlign: 'center', color: '#fff' }}>
+          <p style={{ margin: 0, fontSize: '0.75rem', letterSpacing: '2px', textTransform: 'uppercase', opacity: 0.9 }}>Entrada Oficial</p>
+          <h5 style={{ margin: '5px 0 0', fontWeight: 'bold' }}>Workshop Rolling Code</h5>
+        </div>
+        
+        <div style={{ padding: '25px', textAlign: 'center', borderBottom: '2px dashed #ccc', position: 'relative' }}>
+          <div style={{ background: '#fff', padding: '10px', display: 'inline-block', borderRadius: '10px', border: '1px solid #eee' }}>
+            <QRCode value={qrData} size={140} />
+          </div>
+        </div>
+
+        {/* Datos del comprador */}
+        <div style={{ padding: '20px', fontSize: '0.9rem' }}>
+          <div className="d-flex justify-content-between mb-2">
+            <span style={{ color: '#666' }}>Titular:</span>
+            <strong style={{ textAlign: 'right' }}>{user.nombre} {user.apellido}</strong>
+          </div>
+          <div className="d-flex justify-content-between mb-2">
+            <span style={{ color: '#666' }}>DNI:</span>
+            <strong>{user.documento}</strong>
+          </div>
+          <div className="d-flex justify-content-between mb-2">
+            <span style={{ color: '#666' }}>Entrada:</span>
+            <strong>{quantity}x {ticketName}</strong>
+          </div>
+          <div className="d-flex justify-content-between mt-3 pt-3" style={{ borderTop: '1px solid #eee', fontSize: '0.8rem' }}>
+            <span style={{ color: '#999' }}>ID Transacción:</span>
+            <span style={{ color: '#999', fontFamily: 'monospace' }}>{ticketId}</span>
+          </div>
+        </div>
+      </div>
+
+      <button 
+        className="btnContinue mt-4" 
+        onClick={() => {
+          localStorage.removeItem('ticketReservation');
+          window.location.href = "/";
+        }}
+      >
         Volver al inicio
       </button>
     </div>
