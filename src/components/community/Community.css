@@ -1,4 +1,4 @@
-/* Community.css */
+
 .community {
   max-width: var(--rc-container-max-width);
   margin: 0 auto;
@@ -44,7 +44,6 @@
   to   { transform: translateY(0); }
 }
 
-/* Cards */
 .card {
   margin-bottom: var(--rc-card-gap); /* margin en vez de gap: loop sin saltos */
   padding: 24px;
@@ -103,19 +102,19 @@
   line-height: 1.6;
 }
 
-/* Tablet: 2 columnas */
+
 @media (max-width: 992px) {
   .community__grid { grid-template-columns: repeat(2, 1fr); }
   .col:nth-child(3) { display: none; }
 }
 
-/* Celular: 1 columna */
+
 @media (max-width: 600px) {
   .community__grid { grid-template-columns: 1fr; height: 520px; }
   .col:nth-child(n + 2) { display: none; }
 }
 
-/* Movimiento reducido */
+
 @media (prefers-reduced-motion: reduce) {
   .col { overflow-y: auto; -webkit-mask-image: none; mask-image: none; }
   .col__track { animation: none; }

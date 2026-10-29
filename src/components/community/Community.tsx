@@ -20,7 +20,7 @@ import TrecePThrusday from '../../assets/community-images/stand-alone-pics/13p-t
 import SMClass from '../../assets/community-images/stand-alone-pics/sm-class.webp'
 import RollingMundial from '../../assets/community-images/stand-alone-pics/rolling-mundial.webp'
 
-// Community.tsx
+
 type Testimony =
   | { type: "image"; src: string; alt: string }
   | { type: "testimonial"; name: string; course: string; text: string; avatar: string };
@@ -164,7 +164,7 @@ const col3: Testimony[] = [
 ];
 
 function Column({ items, reverse = false }: { items: Testimony[]; reverse?: boolean }) {
-  const loop = [...items, ...items]; // duplicado para el loop infinito
+  const loop = [...items, ...items];
   return (
     <div className="col">
       <div className={`col__track ${reverse ? "col__track--up" : ""}`}>
