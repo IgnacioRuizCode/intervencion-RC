@@ -12,6 +12,7 @@ import Welcome from './components/welcomeScreen/WelcomeScreem'
 import Sponsors from './components/sponsors/Sponsors'
 import SponsorForm from './components/sponsorsform/sponsorsForm'
 import ButtonWsp from './components/buttonwsp/buttonWsp'
+import Community from './components/community/Community'
 
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
           <Checkout />
           <Sponsors />
           <SponsorForm/>
+          <Community />
           <Location />
           <Footer />
           <ButtonWsp />
