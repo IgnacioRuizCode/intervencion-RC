@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import './index.css'
+import ScrollReveal from './components/scrollReaveal/ScrollReveal'
 import Location from './components/location/Location'
 import Agenda from './components/schedule/agenda'
 import { SpeakersSection } from './components/speakersSection/SpeakersSection'
@@ -49,14 +50,30 @@ function App() {
         <div className="app-home__content">
           <Navbar />
           <Hero />
+          <ScrollReveal>
           <SpeakersSection />
+          </ScrollReveal>
+          <ScrollReveal>
           <Agenda />
+          </ScrollReveal>
+          <ScrollReveal>
           <TicketSection />
+          </ScrollReveal>
+          <ScrollReveal>
           <Checkout />
+          </ScrollReveal>
+          <ScrollReveal>
           <Sponsors />
+          </ScrollReveal>
+          <ScrollReveal>
           <SponsorForm/>
+          </ScrollReveal>
+          <ScrollReveal>
           <Community />
+          </ScrollReveal>
+          <ScrollReveal>
           <Location />
+          </ScrollReveal>
           <Footer />
           <Chatbot/>
           <ButtonWsp />
