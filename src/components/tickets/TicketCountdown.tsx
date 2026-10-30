@@ -8,12 +8,30 @@ const TicketCountdown = () => {
         minutes: 0,
         seconds: 0,
     });
+    
+    const [phase, setPhase] = useState<'early' | 'general' | 'started'>('early');
 
     useEffect(() => {
-        const targetDate = new Date('2026-10-31T23:59:59').getTime();
+        const earlyBirdEnd = new Date('2026-11-01T00:00:00').getTime(); 
+        const eventStart = new Date('2026-11-19T18:00:00').getTime();
 
         const calculateTime = () => {
             const now = new Date().getTime();
+            let targetDate;
+           let currentPhase: 'early' | 'general' | 'started';
+
+            if (now < earlyBirdEnd) {
+                targetDate = earlyBirdEnd;
+                currentPhase = 'early';
+            } else if (now < eventStart) {
+                targetDate = eventStart;
+                currentPhase = 'general';
+            } else {
+                targetDate = now; 
+                currentPhase = 'started';
+            }
+
+            setPhase(currentPhase);
             const distance = targetDate - now;
 
             if (distance > 0) {
@@ -23,6 +41,8 @@ const TicketCountdown = () => {
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
                 setTimeLeft({ days, hours, minutes, seconds });
+            } else {
+                setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
             }
         };
 
@@ -37,12 +57,24 @@ const TicketCountdown = () => {
     return (
         <div className="countdownContainer d-flex flex-column flex-lg-row align-items-start align-items-lg-center justify-content-between gap-4">
             <div className="textWrapper">
-                <span className="countdownEyebrow">Early Bird</span>
+                <span className="countdownEyebrow">
+                    {phase === 'early' ? 'Early Bird' : phase === 'general' ? 'Entrada General' : '¡Llegó el día!'}
+                </span>
                 <h3 className="countdownHeading">
-                    El precio especial termina<br />el 31/10
+                    {phase === 'early' ? (
+                        <>El precio especial termina<br />el 31/10</>
+                    ) : phase === 'general' ? (
+                        <>Faltan pocos días para<br />el evento</>
+                    ) : (
+                        <>¡El Workshop ya comenzó!</>
+                    )}
                 </h3>
                 <p className="countdownSubtext">
-                    Después la entrada pasa de $25.000 a $35.000.
+                    {phase === 'early' 
+                        ? 'Después la entrada pasa de $25.000 a $35.000.' 
+                        : phase === 'general'
+                        ? 'Asegurá tu lugar antes de que se agoten las entradas.'
+                        : 'Las inscripciones presenciales están cerradas.'}
                 </p>
             </div>
 
@@ -65,15 +97,17 @@ const TicketCountdown = () => {
                 </div>
             </div>
 
-            <div className="progressWrapper w-100">
-                <div className="progressHeader">
-                    <span className="progressTextLeft">Quedan 38 de 60 Early Bird</span>
-                    <span className="progressTextRight">63% vendidas</span>
+            {phase === 'early' && (
+                <div className="progressWrapper w-100">
+                    <div className="progressHeader">
+                        <span className="progressTextLeft">Quedan 38 de 60 Early Bird</span>
+                        <span className="progressTextRight">63% vendidas</span>
+                    </div>
+                    <div className="progressBarTrack">
+                        <div className="progressBarFill" style={{ width: '63%' }}></div>
+                    </div>
                 </div>
-                <div className="progressBarTrack">
-                    <div className="progressBarFill"></div>
-                </div>
-            </div>
+            )}
         </div>
     );
 }

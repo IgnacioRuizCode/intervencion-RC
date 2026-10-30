@@ -28,36 +28,43 @@ const tickets = [
 
 const format = (n: number) => "$" + n.toLocaleString("es-AR");
 
-const generalStartDate = new Date(2026, 10, 1);
-const now = new Date();
-const generalStarted = now >= generalStartDate;
-
 const isTicketDisabled = (id: string) => {
-  if (id === "early") return generalStarted;
-  if (id === "general") return !generalStarted;
+  const now = new Date().getTime();
+  const cutOffDate = new Date(2026, 10, 1).getTime(); 
+
+  if (id === "early" && now >= cutOffDate) return true;
+  if (id === "general" && now < cutOffDate) return true;
   return false;
 };
+
 function Checkout() {
   const [step, setStep] = useState(1);
-  const [ticketId, setTicketId] = useState(
-    generalStarted ? "general" : "early",
-  );
+  const [ticketId, setTicketId] = useState(() => {
+    const now = new Date().getTime();
+    const cutOffDate = new Date(2026, 10, 1).getTime();
+    return now >= cutOffDate ? "general" : "early";
+  });
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     const handleTicketSelect = (e: Event) => {
       const customEvent = e as CustomEvent;
-      setTicketId(customEvent.detail);
-      setStep(1);
+      const requestedTicketId = customEvent.detail;
+
+      if (!isTicketDisabled(requestedTicketId)) {
+        setTicketId(requestedTicketId);
+        setStep(1); 
+      } else {
+        setStep(1);
+      }
     };
 
-    window.addEventListener("selectTicket", handleTicketSelect);
-
-    return () => window.removeEventListener("selectTicket", handleTicketSelect);
+    window.addEventListener('selectTicket', handleTicketSelect);
+    
+    return () => window.removeEventListener('selectTicket', handleTicketSelect);
   }, []);
 
-  const selectedTicket =
-    tickets.find((ticket) => ticket.id === ticketId) || tickets[1];
+  const selectedTicket = tickets.find((ticket) => ticket.id === ticketId) || tickets[1];
   const subtotal = selectedTicket.price * quantity;
   const service = subtotal * 0.05;
   const total = subtotal + service;
@@ -72,18 +79,10 @@ function Checkout() {
           </div>
 
           <div className="checkoutSteps">
-            <span className={`step ${step >= 1 ? "stepActive" : ""}`}>
-              1 Entrada
-            </span>
-            <span className={`step ${step >= 2 ? "stepActive" : ""}`}>
-              2 Datos
-            </span>
-            <span className={`step ${step >= 3 ? "stepActive" : ""}`}>
-              3 Pago
-            </span>
-            <span className={`step ${step >= 4 ? "stepActive" : ""}`}>
-              4 Listo
-            </span>
+            <span className={`step ${step >= 1 ? "stepActive" : ""}`}>1 Entrada</span>
+            <span className={`step ${step >= 2 ? "stepActive" : ""}`}>2 Datos</span>
+            <span className={`step ${step >= 3 ? "stepActive" : ""}`}>3 Pago</span>
+            <span className={`step ${step >= 4 ? "stepActive" : ""}`}>4 Listo</span>
           </div>
         </header>
 
@@ -98,7 +97,8 @@ function Checkout() {
                       key={ticket.id}
                       onClick={() => setTicketId(ticket.id)}
                       disabled={isTicketDisabled(ticket.id)}
-                      className={ticket.id === ticketId ? "ticket ticketActive" : "ticket"}
+                      className={`ticket ${ticket.id === ticketId ? "ticketActive" : ""} ${isTicketDisabled(ticket.id) ? "opacity-50" : ""}`}
+                      style={isTicketDisabled(ticket.id) ? { cursor: 'not-allowed' } : {}}
                     >
                       <div className="ticketInfo">
                         <span className="ticketName">{ticket.name}</span>
