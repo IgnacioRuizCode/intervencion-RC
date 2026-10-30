@@ -89,12 +89,11 @@ function validar(datos: FormularioSponsor): ErroresSponsor {
 }
 
 function SponsorForm() {
-  const [datos, setDatos] = useState<FormularioSponsor>(datosIniciales)
-  const [errores, setErrores] = useState<ErroresSponsor>({})
-  const [enviado, setEnviado] = useState<boolean>(false)
-    const [ticket, setTicket] = useState<TicketSponsor | null>(null)
+const [datos, setDatos] = useState<FormularioSponsor>(datosIniciales)
+const [errores, setErrores] = useState<ErroresSponsor>({})
+const [ticket, setTicket] = useState<TicketSponsor | null>(null)
 
-  const handleChange = (
+const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target
