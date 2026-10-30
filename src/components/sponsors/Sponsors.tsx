@@ -94,7 +94,7 @@ const bronzePartners: SimplePartner[] = [
 
 function Sponsors() {
     return (
-        <section className='sponsors'>
+        <section id='sponsors' className='sponsors'>
             
             <div className='tier tier--diamond'>
                 <header className='tierHeader'>

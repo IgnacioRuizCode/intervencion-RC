@@ -21,7 +21,8 @@ const Chatbot = () => {
     { label: '📅 ¿Cuándo y dónde es?', action: 'faq_lugar' },
     { label: '📋 Ver cronograma', action: 'faq_cronograma' },
     { label: '🎟️ Comprar entradas', action: 'comprar_opciones' },
-    { label: '🏢 Compra corporativa (+150 entradas)', action: 'comprar_mayorista' }
+    { label: '🏢 Compra corporativa (+150 entradas)', action: 'comprar_mayorista' },
+    { label: '🤝 Quiero ser Sponsor', action: 'info_sponsors' },
   ];
 
 
@@ -52,20 +53,44 @@ const Chatbot = () => {
 
       switch (option.action) {
         case 'faq_lugar':
-          botResponse.text = 'El evento se realizará el 15 de Noviembre en el Centro de Convenciones. ¡Te esperamos a las 09:00 AM! 📍';
+          botResponse.text = 'El evento se realizará el 19 de Noviembre en Calle Gral. Paz 576, Entrepiso. ¡Te esperamos a las 18:00 hs! 📍';
           botResponse.options = defaultOptions;
           break;
         case 'faq_cronograma':
-          botResponse.text = 'Tenemos charlas sobre React, Node.js y UX/UI. Podés ver el detalle completo en la sección de Cronograma arriba. 🕒';
+          botResponse.text = '¡Claro! Te llevo a la sección del cronograma para que veas todas las charlas en detalle. 🕒';
           botResponse.options = defaultOptions;
+          
+          document.getElementById('agenda')?.scrollIntoView({ behavior: 'smooth' });
+          setIsOpen(false);
           break;
-        case 'comprar_opciones':
+        case 'comprar_opciones': {
+          const today = new Date();
+          const cutOffDate = new Date(2026, 10, 1); 
+
           botResponse.text = '¡Excelente! ¿Qué tipo de entrada buscás?';
+          
+          if (today < cutOffDate) {
+            botResponse.options = [
+              { label: 'Early Bird ($25.000)', action: 'buy_early' },
+              { label: 'General (Disponible 1/11)', action: 'info_general_bloqueada' },
+              { label: 'Virtual ($15.000)', action: 'buy_virtual' },
+              { label: 'Volver al menú', action: 'menu_principal' }
+            ];
+          } else {
+            botResponse.options = [
+              { label: 'General ($35.000)', action: 'buy_general' },
+              { label: 'Virtual ($15.000)', action: 'buy_virtual' },
+              { label: 'Volver al menú', action: 'menu_principal' }
+            ];
+          }
+          break;
+        }
+        
+        case 'info_general_bloqueada':
+          botResponse.text = 'La entrada General todavía no está disponible. Las ventas se habilitan el 1 de Noviembre. ¡Aprovechá la Early Bird mientras tanto! ⏳';
           botResponse.options = [
-            { label: 'Early Bird ($25.000)', action: 'buy_early' },
-            { label: 'General ($35.000)', action: 'buy_general' },
-            { label: 'Virtual ($15.000)', action: 'buy_virtual' },
-            { label: 'Volver al menú', action: 'menu_principal' }
+              { label: 'Comprar Early Bird', action: 'buy_early' },
+              { label: 'Volver al menú', action: 'menu_principal' }
           ];
           break;
         case 'comprar_mayorista':
@@ -96,10 +121,35 @@ const Chatbot = () => {
         window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, '_blank');
           break;
         }
-        case 'menu_principal':
+          case 'menu_principal':
           botResponse.text = 'Acá tenés las opciones principales:';
           botResponse.options = defaultOptions;
           break;
+          case 'info_sponsors':
+          botResponse.text = '¡Qué excelente iniciativa! 🚀 Sumate a líderes como Google Cloud, AWS y Mercado Libre. Tenemos planes Diamante, Oro y Bronce para destacar tu marca. ¿Qué te gustaría hacer?';
+          botResponse.options = [
+            { label: 'Ver Sponsors actuales', action: 'ir_a_sponsors' },
+            { label: '📱 Contactar a Ventas', action: 'link_wsp_sponsor' },
+            { label: 'Volver al menú', action: 'menu_principal' }
+          ];
+          break;
+
+        case 'ir_a_sponsors':
+          botResponse.text = '¡Genial! Te llevo a la sección para que veas quiénes ya nos acompañan y los niveles de participación. ✨';
+          botResponse.options = defaultOptions;
+          
+          document.getElementById('sponsors')?.scrollIntoView({ behavior: 'smooth' });
+          setIsOpen(false);
+          break;
+
+        case 'link_wsp_sponsor': {
+          botResponse.text = 'Abriendo WhatsApp...';
+          botResponse.options = defaultOptions;
+          const numero = '5493815783030'; 
+          const mensaje = 'Hola, me gustaría recibir información y tarifas (Diamante, Oro, Bronce) para sumar a mi empresa como Sponsor del evento.';
+          window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, '_blank');
+          break;
+        }
         default:
           botResponse.text = 'No entendí esa opción.';
           botResponse.options = defaultOptions;
