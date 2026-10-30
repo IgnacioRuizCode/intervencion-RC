@@ -8,12 +8,17 @@ function Navbar() {
 
   const handleToggle = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
+  const goToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  e.preventDefault();
+  closeMenu();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark barra sticky-top">
       <div className="container">
         
-        <a className="navbar-brand" href="#inicio" onClick={closeMenu}>
+        <a className="navbar-brand" href="#inicio" onClick={goToTop}>
           <img src={logo} alt="Rolling Code School" height="65" />
         </a>
 
