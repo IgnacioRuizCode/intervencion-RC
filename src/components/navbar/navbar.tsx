@@ -38,10 +38,10 @@ function Navbar() {
             <li className="nav-item">
               <a className="nav-link" href="#location" onClick={closeMenu}>Cómo llegar</a>
             </li>
-            <li className="nav-item ms-lg-2 d-flex justify-content-center">
+            <li className="nav-item ms-lg-2 my-3 my-lg-0 d-flex justify-content-center">
               <ThemeToggle />
             </li>
-            <li className="nav-item ms-lg-3">
+            <li className="nav-item ms-lg-3 mb-2 mb-lg-0">
               <a className="btn boton-comprar" href="#checkout" onClick={closeMenu}>Comprar entrada</a>
             </li>
           </ul>
