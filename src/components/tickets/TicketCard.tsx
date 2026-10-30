@@ -1,7 +1,7 @@
 import './TicketSection.css';
 
 interface TicketProps {
-    ticket: {
+  ticket: {
     id: string;
     title: string;
     price: string;
@@ -12,14 +12,18 @@ interface TicketProps {
     isHighlighted: boolean;
     buttonText: string;
   };
-      onOpenModal: (ticketName: string) => void;
 }
 
-const TicketCard = ({ ticket, onOpenModal }: TicketProps) =>{
-const cardClass = ticket.isHighlighted ? 'ticketCard highlighted' : 'ticketCard normal';
-const btnClass = ticket.isHighlighted ? 'ticketBtn solid w-100' : 'ticketBtn outline w-100';
-const badgeClass = ticket.isHighlighted ? 'badge rounded-pill ticketBadgeDark' : 'badge rounded-pill ticketBadgeLight';
-const iconColor = ticket.isHighlighted ? '#ffffff' : '#e0202a';
+const TicketCard = ({ ticket }: TicketProps) =>{
+  const cardClass = ticket.isHighlighted ? 'ticketCard highlighted' : 'ticketCard normal';
+  const btnClass = ticket.isHighlighted ? 'ticketBtn solid w-100' : 'ticketBtn outline w-100';
+  const badgeClass = ticket.isHighlighted ? 'badge rounded-pill ticketBadgeDark' : 'badge rounded-pill ticketBadgeLight';
+  const iconColor = ticket.isHighlighted ? '#ffffff' : '#e0202a';
+
+  const handleComprarClick = () => {
+    window.dispatchEvent(new CustomEvent('selectTicket', { detail: ticket.id }));
+    document.getElementById('checkout')?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <div className={cardClass}>
@@ -56,12 +60,11 @@ const iconColor = ticket.isHighlighted ? '#ffffff' : '#e0202a';
         ))}
       </ul>
 
-      <button className={btnClass}
-      onClick={() => onOpenModal(ticket.title)}>
+      <button className={btnClass} onClick={handleComprarClick}>
         {ticket.buttonText}
       </button>
     </div>
   );
 };
 
-export default TicketCard
+export default TicketCard;

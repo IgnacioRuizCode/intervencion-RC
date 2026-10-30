@@ -1,11 +1,11 @@
 
 .redBox {
-    width: min(1312px, 100% - 48px);   
-    min-height: 650px;
+    width: min(1200px, 100% - 48px);   
+    min-height: auto;
     margin: 48px auto 0;              
     box-sizing: border-box;
-    padding: 64px 56px;
-    gap: 48px;
+    padding: 40px 56px;
+    gap: 32px;
     display: flex;
     align-items: center;
     border-radius: var(--rc-radius-block);
@@ -20,7 +20,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0 8px;
-    font-size: 26px;
+    font-size: 20px;
 }
 
 .subTitle p { margin: 0 0 16px; }
@@ -38,7 +38,7 @@
 
 .mainTitle {
     margin: 0 0 24px;
-    font-size: clamp(40px, 6vw, 88px); 
+    font-size: clamp(32px, 5vw, 64px); 
     line-height: 1.02;
     letter-spacing: -1.5px;
     font-weight: var(--rc-font-weight-bold);
@@ -48,8 +48,9 @@
 .mainTitleBlack { color: var(--rc-black); }
 
 .textDescription {
+    margin: 0 0 24px;
     color: var(--rc-pink, #ffe9ea);
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.55;
     max-width: 540px;
     margin: 0 0 32px;
@@ -120,7 +121,7 @@
 
 .blackBox {
     box-sizing: border-box;
-    padding: 40px;
+    padding: 32px;
     border-radius: var(--rc-radius-box);
     background-color: var(--rc-black);
     color: var(--rc-white);
@@ -144,8 +145,8 @@
 }
 
 .iconBB {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     display: block;
     flex-shrink: 0;
 }
@@ -164,12 +165,12 @@
 }
 
 .textSupLg {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: var(--rc-font-weight-bold);
 }
 
 .textInfLg {
-    font-size: 36px;
+    font-size: 28px;
     color: var(--rc-white);
 }
 
@@ -179,7 +180,7 @@
     display: inline-flex;
     align-items: center;
     border-radius: var(--rc-radius-pill);
-    font-size: 15px;
+    font-size: 13px;
     font-weight: var(--rc-font-weight-semibold);
     padding: 8px 20px;
 }
@@ -260,8 +261,9 @@
     .subTitle p { margin-bottom: 12px; }
 
     .mainTitle {
-        font-size: clamp(32px, 9.5vw, 48px);
-        letter-spacing: -1px;
+        font-size: 36px;
+        line-height: 1.1;
+        letter-spacing: -1.5px;
         margin-bottom: 20px;
     }
 

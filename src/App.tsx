@@ -9,7 +9,10 @@ import Checkout from './components/checkout/Checkout'
 import Navbar from './components/navbar/navbar'
 import Footer from './components/footer/footer'
 import Welcome from './components/welcomeScreen/WelcomeScreem'
+import Sponsors from './components/sponsors/Sponsors'
 import SponsorForm from './components/sponsorsform/sponsorsForm'
+import ButtonWsp from './components/buttonwsp/buttonWsp'
+import Community from './components/community/Community'
 
 
 function App() {
@@ -49,9 +52,13 @@ function App() {
           <Agenda />
           <TicketSection />
           <Checkout />
+          <Sponsors />
           <SponsorForm/>
+          <Community />
           <Location />
           <Footer />
+          <ButtonWsp />
+
         </div>
       </div>
 

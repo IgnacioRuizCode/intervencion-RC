@@ -1,31 +1,32 @@
 import { SpeakerCard } from './SpeakerCard';
 import { speakersData } from './speakersData';
+import './SpeakersSection.css';
 
-const SpeakersSection = () =>{
-    return(
-        <section className="container-fluid text-white py-5"
-        style={{backgroundColor: '#0b0b0c'}}>
-            <div className="mx-auto"
-            style={{ maxWidth: '1200px'}}
-            >
+const SpeakersSection = () => {
+    return (
+        <section id='speakersSection' className="container-fluid text-white py-5 speakersSectionBg">
+            <div className="mx-auto speakersContainer">
+                
                 <div className="mb-5">
-                    <span style={{ color: '#e0202a', fontSize: '16px', fontWeight: 800, letterSpacing: '3px', textTransform: 'uppercase'}}>
+                    <span className="speakersSubtitle">
                         Speakers
                     </span>
-                    <h2 style={{ fontSize: '56px', fontWeight: 800, fontFamily: 'Plus Jakarta Sans, sans-serif'}}>
+                    <h2 className="speakersSectionTitle">
                         Diez charlas, un mismo objetivo
                     </h2>
                 </div>
-                <div className="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4">
-                    {speakersData.map((speaker)=>(
-                        <div className="col" key={speaker.id}>
-                            <SpeakerCard speaker={speaker}/>
+
+                <div className="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4 speakersList">
+                    {speakersData.map((speaker) => (
+                        <div className="col speakerItem" key={speaker.id}>
+                            <SpeakerCard speaker={speaker} />
                         </div>
                     ))}
                 </div>
+                
             </div>
         </section>
     )
 }
 
-export {SpeakersSection}
+export { SpeakersSection }

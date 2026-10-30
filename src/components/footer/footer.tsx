@@ -67,11 +67,12 @@ function Footer() {
   const anio: number = new Date().getFullYear()
 
   return (
-    <footer className="footer">
-      <div className="footer__contenido">
+    <footer className="footer pb-5 pb-md-0">
+      
+      <div className="footer__contenido d-flex flex-column flex-md-row align-items-center justify-content-md-between gap-3 mb-4 mb-md-0">
         <img src={logo} alt="Rolling Code School" className="footer__logo" />
 
-        <ul className="footer__redes">
+        <ul className="footer__redes d-flex flex-row flex-wrap justify-content-center justify-content-md-end gap-3 p-0 m-0" style={{ listStyle: 'none' }}>
           {redes.map((red) => (
             <li key={red.nombre}>
               <a
@@ -86,25 +87,35 @@ function Footer() {
                   } as CSSProperties
                 }
               >
+              <a href={red.url} aria-label={red.nombre} target="_blank" rel="noreferrer" className="text-white fs-4">
                 {red.icono}
               </a>
             </li>
           ))}
         </ul>
       </div>
-      <div className="footer__legal">
-        <ul className="footer__links">
+
+      <div className="footer__legal d-flex flex-column flex-md-row align-items-center justify-content-md-between text-center text-md-start px-2 px-md-0 mt-md-4">
+        
+        <ul className="footer__links d-flex flex-row flex-nowrap justify-content-center gap-2 gap-md-3 p-0 mb-2 mb-md-0" style={{ listStyle: 'none' }}>
           {enlacesLegales.map((enlace) => (
             <li key={enlace.texto}>
-              <a href={enlace.url}>{enlace.texto}</a>
+              <a 
+                href={enlace.url} 
+                className="text-white text-decoration-none" 
+                style={{ fontSize: '0.85rem' }} 
+              >
+                {enlace.texto}
+              </a>
             </li>
           ))}
         </ul>
 
-        <p className="footer__copyright">
+        <p className="footer__copyright mb-0 mt-2 mt-md-0" style={{ fontSize: '0.85rem' }}>
           © {anio} Rolling Code School. Todos los derechos reservados.
         </p>
       </div>
+      
     </footer>
   )
 }
