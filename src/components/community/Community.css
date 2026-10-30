@@ -46,7 +46,7 @@
 }
 
 .card {
-  margin-bottom: var(--rc-card-gap); /* margin en vez de gap: loop sin saltos */
+  margin-bottom: var(--rc-card-gap);
   padding: 24px;
   background: var(--rc-surface);
   border: 1px solid var(--rc-border);
