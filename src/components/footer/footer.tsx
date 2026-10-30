@@ -97,6 +97,13 @@ function Footer() {
           {enlacesLegales.map((enlace) => (
             <li key={enlace.texto}>
               <a href={enlace.url}>{enlace.texto}</a>
+              <a 
+                href={enlace.url} 
+                className="text-decoration-none" 
+                style={{ fontSize: '0.85rem' }} 
+              >
+                {enlace.texto}
+              </a>
             </li>
           ))}
         </ul>

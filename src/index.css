@@ -2,6 +2,13 @@ html {
   scroll-behavior: smooth;
 }
 :root {
+  --rc-page-bg: var(--rc-black);
+  --rc-page-text: var(--rc-white);
+  --rc-page-text-soft: var(--rc-text-soft);
+  --rc-page-text-mute: var(--rc-text-mute);
+  --rc-page-border: var(--rc-border-chip);
+  --rc-logo-filter: none;
+   color-scheme: dark;
   /* ==========================================
      Colores
      ========================================== */
@@ -49,11 +56,22 @@ html {
   --rc-radius-pill: 999px; /* Para botones y chips */
 }
 
+[data-theme="light"] {
+  --rc-page-bg: #f6f4f1;
+  --rc-page-text: #0b0b0c;
+  --rc-page-text-soft: #3f3f46;
+  --rc-page-text-mute: #71717a;
+  --rc-page-border: #d9d5cf;
+  --rc-logo-filter: invert(1);
+  color-scheme: light;
+}
+
 body {
   margin: 0;
-  background-color: var(--rc-black);
-  color: var(--rc-white);
+  background-color: var(--rc-page-bg);
+  color: var(--rc-page-text);
   font-family: var(--rc-font-family);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html, body, #root {

@@ -3,9 +3,7 @@
   width: auto;
   filter: invert(1);
 }
-body {
-  background-color: var(--rc-black);
-}
+
 
 .logo-icon {
   width: 36px;
@@ -37,7 +35,7 @@ body {
   font-family: Arial, sans-serif;
 }
 .nav-link{
-  color:var(--rc-white)
+  color:var(--rc-page-text)
 }
 
 .boton-comprar {
@@ -65,5 +63,21 @@ body {
   position: sticky;
   top: 0;
   z-index: 1030;
-  background-color: var(--rc-black);
+  background-color: var(--rc-page-bg);
+  transition: background-color 0.3s ease;
+}
+
+.navbar-brand img {
+  filter: var(--rc-logo-filter);
+}
+
+[data-theme="light"] .navbar {
+  --bs-navbar-color: var(--rc-page-text);
+  --bs-navbar-hover-color: var(--rc-red);
+  --bs-navbar-active-color: var(--rc-red);
+  --bs-navbar-toggler-border-color: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"] .navbar-toggler-icon {
+  filter: invert(1);
 }

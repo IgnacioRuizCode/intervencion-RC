@@ -102,7 +102,7 @@
 
 .tierSubtitle {
   font-size: 0.95rem;
-  color: var(--rc-text-soft);
+  color: var(--rc-page-text-soft);
 }
 
 .tier--diamond {
@@ -364,6 +364,71 @@
   color: var(--rc-text-mute);
 }
 
+[data-theme="light"] .sponsors {
+  color: var(--rc-page-text);
+
+  --sp-diamond: #c01620;
+  --sp-diamond-bg: rgba(224, 32, 42, 0.1);
+  --sp-diamond-border: rgba(224, 32, 42, 0.4);
+
+  --sp-gold: #8a6100;
+  --sp-gold-bg: rgba(245, 197, 24, 0.2);
+  --sp-gold-border: rgba(138, 97, 0, 0.4);
+
+  --sp-bronze: #9a4f08;
+  --sp-bronze-bg: rgba(240, 164, 58, 0.18);
+  --sp-bronze-border: rgba(154, 79, 8, 0.4);
+
+  --sp-card-bg: linear-gradient(180deg, #ffffff 0%, #f3f0ec 100%);
+  --sp-tile: #f7f5f2;
+}
+
+[data-theme="light"] .mainCard,
+[data-theme="light"] .goldCard,
+[data-theme="light"] .bronzeCard {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 22px rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="light"] .mainCardDescription,
+[data-theme="light"] .goldCardRole,
+[data-theme="light"] .bronzeCardRole {
+  color: #52525b;
+}
+
+[data-theme="light"] .mainCardFooter {
+  border-top-color: var(--rc-page-border);
+}
+
+[data-theme="light"] .mainCardLink {
+  background-color: #f1eeea;
+  border-color: var(--rc-page-border);
+  color: var(--rc-page-text-soft);
+}
+
+[data-theme="light"] .mainCardLink:hover,
+[data-theme="light"] .mainCardLink:focus-visible {
+  background-color: var(--rc-black);
+  border-color: var(--rc-black);
+  color: var(--rc-white);
+}
+
+[data-theme="light"] .logoBox {
+  border-color: var(--rc-page-border);
+}
+
+[data-theme="light"] .logoBox img[alt="Logo de GitHub"],
+[data-theme="light"] .logoBox img[alt="Logo de Vercel"] {
+  filter: invert(1);
+}
+
+[data-theme="light"] .logoBox img[alt="Logo de Globant"] {
+  filter: invert(1) hue-rotate(180deg) brightness(1.8);
+}
+
+[data-theme="light"] .logoBox img[alt="Logo de Mercado Libre"] {
+  filter: brightness(0.72);
+}
+
 @media (max-width: 1100px) {
   .mainPartnersCards {
     grid-template-columns: repeat(2, 1fr);
@@ -405,3 +470,4 @@
     transition: none;
   }
 }
+

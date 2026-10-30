@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import logo from "../../assets/logo-blanco.svg";
+import ThemeToggle from "../themeToggle/ThemeToggle";
 import "./navbar.css";
 
 function Navbar() {
@@ -36,6 +37,9 @@ function Navbar() {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#location" onClick={closeMenu}>Cómo llegar</a>
+            </li>
+            <li className="nav-item ms-lg-2 d-flex justify-content-center">
+              <ThemeToggle />
             </li>
             <li className="nav-item ms-lg-3">
               <a className="btn boton-comprar" href="#checkout" onClick={closeMenu}>Comprar entrada</a>
