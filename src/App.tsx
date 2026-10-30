@@ -13,6 +13,7 @@ import Sponsors from './components/sponsors/Sponsors'
 import SponsorForm from './components/sponsorsform/sponsorsForm'
 import ButtonWsp from './components/buttonwsp/buttonWsp'
 import Community from './components/community/Community'
+import Chatbot from './components/chatbot/Chatbot'
 
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
           <Community />
           <Location />
           <Footer />
+          <Chatbot/>
           <ButtonWsp />
 
         </div>
