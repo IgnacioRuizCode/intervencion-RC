@@ -17,7 +17,7 @@ function ThemeToggle() {
       localStorage.setItem(STORAGE_KEY, theme)
     } catch {
       /* storage bloqueado: el tema igual funciona en la sesión */
-    }
+}
   }, [theme])
 
   const isLight = theme === 'light'
