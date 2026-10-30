@@ -96,7 +96,6 @@ function Footer() {
         <ul className="footer__links">
           {enlacesLegales.map((enlace) => (
             <li key={enlace.texto}>
-              <a href={enlace.url}>{enlace.texto}</a>
               <a 
                 href={enlace.url} 
                 className="text-decoration-none" 
