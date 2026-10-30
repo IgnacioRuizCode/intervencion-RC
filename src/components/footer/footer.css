@@ -14,7 +14,7 @@
 
 .footer__logo {
   height: 65px;
-  flex-wrap:wrap
+  flex-wrap: wrap;
 }
 
 .footer__redes {
@@ -36,11 +36,14 @@
   background-color: var(--rc-surface);
   color: var(--rc-white);
   font-size: 15px;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
 }
 
 .footer__redes a:hover {
-  background-color: var(--rc-text-on-white);
+  background: var(--color-red);
+  border-color: transparent;
+  color: var(--color-icono);
+  transform: translateY(-3px);
 }
 
 .footer__legal {

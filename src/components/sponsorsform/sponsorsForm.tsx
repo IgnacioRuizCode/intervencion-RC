@@ -2,6 +2,8 @@ import './sponsorsForm.css'
 import { useState } from 'react'
 import type { ChangeEvent, FormEvent } from 'react'
 import { FiUploadCloud, FiSend } from 'react-icons/fi'
+import SponsorTicket from '../sponsorticket/SponsorTicket'
+ import type { TicketSponsor } from '../sponsorticket/SponsorTicket'
 
 interface FormularioSponsor {
   nombre: string
@@ -87,27 +89,27 @@ function validar(datos: FormularioSponsor): ErroresSponsor {
 }
 
 function SponsorForm() {
-  const [datos, setDatos] = useState<FormularioSponsor>(datosIniciales)
-  const [errores, setErrores] = useState<ErroresSponsor>({})
-  const [enviado, setEnviado] = useState<boolean>(false)
+const [datos, setDatos] = useState<FormularioSponsor>(datosIniciales)
+const [errores, setErrores] = useState<ErroresSponsor>({})
+const [ticket, setTicket] = useState<TicketSponsor | null>(null)
 
-  const handleChange = (
+const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target
     setDatos({ ...datos, [name]: value })
     setErrores({ ...errores, [name]: '' })
-    setEnviado(false)
+    
   }
 
   const handleLogo = (e: ChangeEvent<HTMLInputElement>) => {
     const archivo = e.target.files?.[0] ?? null
     setDatos({ ...datos, logo: archivo })
     setErrores({ ...errores, logo: '' })
-    setEnviado(false)
+    
   }
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     const nuevosErrores = validar(datos)
@@ -115,12 +117,30 @@ function SponsorForm() {
 
     if (Object.keys(nuevosErrores).length === 0) {
       console.log('Postulación enviada:', datos)
-      setEnviado(true)
+      setTicket({
+        numero: `SP-${Date.now().toString().slice(-6)}`,
+        fecha: new Date().toLocaleDateString('es-AR'),
+        nombre: datos.nombre.trim(),
+        apellido: datos.apellido.trim(),
+        empresa: datos.empresa.trim(),
+        email: datos.email.trim(),
+        tipo: datos.tipo,
+      })
       setDatos(datosIniciales)
-      e.currentTarget.reset() 
     }
   }
-
+    if (ticket) {
+    return (
+      <section className="sponsor py-5" id="sponsors">
+        <div className="container">
+          <SponsorTicket
+            ticket={ticket}
+            onNuevaPostulacion={() => setTicket(null)}
+          />
+        </div>
+      </section>
+    )
+  }
   return (
     <section className="sponsor py-5" id="sponsors">
       <div className="container">
@@ -271,11 +291,6 @@ function SponsorForm() {
                 <FiSend />
                 Enviar postulación de Sponsor
               </button>
-              {enviado && (
-                <p className="sponsor__exito">
-                  ¡Gracias! Recibimos tu postulación y nos contactaremos pronto.
-                </p>
-              )}
             </div>
           </div>
         </form>
