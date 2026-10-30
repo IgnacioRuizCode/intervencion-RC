@@ -321,6 +321,7 @@
 
   .panel {
     padding: 24px 20px;
+    overflow: hidden;
   }
 
   .ticketPrice {
@@ -329,6 +330,12 @@
 
   .summaryTotal strong {
     font-size: 32px;
+  }
+
+  .rccs {
+    transform: scale(0.85);
+    transform-origin: top center; 
+    margin-bottom: -20px !important; 
   }
 }
 
