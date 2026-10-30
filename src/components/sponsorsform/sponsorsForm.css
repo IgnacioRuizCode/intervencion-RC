@@ -1,6 +1,6 @@
 .sponsor {
-  background-color: #0b0b0b;
-  color: #fff;
+  background-color: transparent;
+  color: var(--rc-page-text);
 }
 
 .sponsor__encabezado {
@@ -16,12 +16,13 @@
 }
 
 .sponsor__texto {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--rc-page-text-soft);
   font-size: 18px;
   margin: 0;
 }
 
 .sponsor__form {
+  color: #fff;
   background-color: #15171c;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;
@@ -147,6 +148,60 @@
   margin: 16px 0 0;
   text-align: center;
   color: #4ade80;
+}
+
+[data-theme="light"] .sponsor__form {
+  color: var(--rc-page-text);
+  background-color: #ffffff;
+  border-color: var(--rc-page-border);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 10px 28px rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="light"] .sponsor__label {
+  color: var(--rc-page-text-soft);
+}
+
+[data-theme="light"] .sponsor__input {
+  background-color: #faf8f5;
+  border-color: #d4d0ca;
+  color: var(--rc-page-text);
+}
+
+[data-theme="light"] .sponsor__input::placeholder {
+  color: #9a9aa2;
+}
+
+[data-theme="light"] .sponsor__logo {
+  background-color: #faf8f5;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"] .sponsor__logo:hover {
+  border-color: rgba(0, 0, 0, 0.45);
+}
+
+[data-theme="light"] .sponsor__logo-icono {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .sponsor__logo-ayuda {
+  color: var(--rc-page-text-mute);
+}
+
+[data-theme="light"] .sponsor__input:focus {
+  border-color: #e5485a;
+}
+
+[data-theme="light"] .sponsor__input--error {
+  border-color: #d92d2d;
+}
+
+[data-theme="light"] .sponsor__error {
+  color: #d92d2d;
+}
+
+[data-theme="light"] .sponsor__exito {
+  color: #15803d;
 }
 
 @media (max-width: 576px) {

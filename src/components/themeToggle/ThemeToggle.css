@@ -1,0 +1,24 @@
+.themeToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--rc-page-border);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--rc-page-text);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.themeToggle:hover {
+  border-color: var(--rc-red);
+  color: var(--rc-red);
+}
+
+.themeToggle:focus-visible {
+  outline: 3px solid var(--rc-red);
+  outline-offset: 3px;
+}

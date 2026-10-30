@@ -1,6 +1,6 @@
 .agenda {
-  background-color: var(--rc-black);
-  color: var(--rc-white);
+  background-color: transparent;
+  color: var(--rc-page-text);
 }
 
 .agenda-label {
@@ -17,11 +17,11 @@
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 1.25rem;
-  color:var(--rc-text-soft)
+  color: var(--rc-page-text-soft);
 }
 
 .agenda-text {
-  color: var(--rc-text-soft);
+  color: var(--rc-page-text-soft);
   font-size: 0.95rem;
 }
 
@@ -31,11 +31,11 @@
   gap: 1.5rem;
   padding: 1rem ;
   margin-right: 5rem;
-  border-top: 1px solid var(--rc-border-chip);
+  border-top: 1px solid var(--rc-page-border);
 }
 
 .agenda-item:last-child {
-  border-bottom: 1px solid var(--rc-border-chip);
+  border-bottom: 1px solid var(--rc-page-border);
 }
 
 .agenda-time {
@@ -52,7 +52,7 @@
 }
 
 .agenda-speaker {
-  color: var(--rc-text-soft);
+  color: var(--rc-page-text-soft);
 }
 
 @media (max-width: 575px) {

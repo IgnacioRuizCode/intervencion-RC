@@ -10,8 +10,9 @@
   text-align: center;
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: var(--rc-font-weight-bold);
-  color: var(--rc-white);
+  color: var(--rc-page-text);
 }
+
 .community__hash { color: var(--rc-red); }
 
 .community__grid {
@@ -21,7 +22,7 @@
   height: 640px;
 }
 
-.col {
+.community__grid > .col {
   overflow: hidden;
   -webkit-mask-image: linear-gradient(transparent, #000 15%, #000 85%, transparent);
   mask-image: linear-gradient(transparent, #000 15%, #000 85%, transparent);
@@ -34,10 +35,10 @@
   will-change: transform;
 }
 .col__track--up { animation-direction: reverse; }
-.col:nth-child(1) .col__track { animation-duration: 60s; }
-.col:nth-child(2) .col__track { animation-duration: 50s; }
-.col:nth-child(3) .col__track { animation-duration: 70s; }
-.col:hover .col__track { animation-play-state: paused; }
+.community__grid > .col:nth-child(1) .col__track { animation-duration: 60s; }
+.community__grid > .col:nth-child(2) .col__track { animation-duration: 50s; }
+.community__grid > .col:nth-child(3) .col__track { animation-duration: 70s; }
+.community__grid > .col:hover .col__track { animation-play-state: paused; }
 
 @keyframes community-scroll {
   from { transform: translateY(-50%); }
@@ -102,21 +103,42 @@
   line-height: 1.6;
 }
 
+[data-theme="light"] .community .card {
+  background: #ffffff;
+  border-color: var(--rc-page-border);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .community .card:hover {
+  border-color: var(--rc-red);
+}
+
+[data-theme="light"] .card__author strong {
+  color: var(--rc-page-text);
+}
+
+[data-theme="light"] .card__author span {
+  color: var(--rc-page-text-mute);
+}
+
+[data-theme="light"] .card__text {
+  color: var(--rc-page-text-soft);
+}
 
 @media (max-width: 992px) {
   .community__grid { grid-template-columns: repeat(2, 1fr); }
-  .col:nth-child(3) { display: none; }
+  .community__grid > .col:nth-child(3) { display: none; }
 }
 
 
 @media (max-width: 600px) {
   .community__grid { grid-template-columns: 1fr; height: 520px; }
-  .col:nth-child(n + 2) { display: none; }
+  .community__grid > .col:nth-child(n + 2) { display: none; }
 }
 
 
 @media (prefers-reduced-motion: reduce) {
-  .col { overflow-y: auto; -webkit-mask-image: none; mask-image: none; }
+  .community__grid > .col { overflow-y: auto; -webkit-mask-image: none; mask-image: none; }
   .col__track { animation: none; }
   .card[aria-hidden="true"] { display: none; }
 }

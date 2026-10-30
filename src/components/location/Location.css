@@ -3,8 +3,8 @@
     align-items: center;
     gap: 48px;
     padding: 64px 48px;
-    background-color: var(--rc-bg, #0b0b0c);
-    color: var(--rc-white);
+    background-color: transparent;
+    color: var(--rc-page-text);
     font-family: var(--rc-font-family);
 }
 
@@ -62,17 +62,17 @@
 
 .addressMain {
     font-weight: var(--rc-font-weight-semibold);
-    color: var(--rc-white);
+    color: var(--rc-page-text);
 }
 
 .addressSub {
-    color: var(--rc-text-mute);
+    color: var(--rc-page-text-mute);
 }
 
 .arrivePill {
-    border: solid 1px var(--rc-text-mute);
+    border: solid 1px var(--rc-page-text-mute);
     border-radius: var(--rc-radius-pill);
-    color: var(--rc-text-mute);
+    color: var(--rc-page-text-mute);
     font-size: 14px;
     padding: 6px 14px;
 }
@@ -97,9 +97,9 @@
 }
 
 .btnTicket {
-    border: solid 2px var(--rc-white);
+    border: solid 2px var(--rc-page-text);
     background: transparent;
-    color: var(--rc-white);
+     color: var(--rc-page-text);
 }
 
 .mapCard {
@@ -107,7 +107,7 @@
     height: 420px;
     border-radius: 24px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--rc-page-border);
 }
 
 .mapCard iframe {
@@ -168,6 +168,14 @@
 .mapInfoSub {
     font-size: 12px;
     color: var(--rc-text-mute);
+}
+
+[data-theme="light"] .mapCard iframe {
+    filter: none;
+}
+
+.howToArriveMainDiv .mainTitle {
+    color: var(--rc-page-text);
 }
 
 @media (max-width: 800px) {

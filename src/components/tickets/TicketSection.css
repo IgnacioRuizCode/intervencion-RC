@@ -1,6 +1,6 @@
 .sectionWrapper {
-  background-color: #0b0b0c;
-  color: var(--rc-white);
+  background-color: transparent;
+  color: var(--rc-page-text);
 }
 
 .sectionContainer {
