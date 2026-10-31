@@ -35,7 +35,7 @@ const tiposLogoPermitidos: string[] = [
   'image/webp',
 ]
 
-const pesoMaximoLogo: number = 5 * 1024 * 1024 // 5 MB
+const pesoMaximoLogo: number = 5 * 1024 * 1024 
 
 const datosIniciales: FormularioSponsor = {
   nombre: '',
