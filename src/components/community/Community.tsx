@@ -84,7 +84,7 @@ const col2: Testimony[] = [
     type: "testimonial",
     name: "Julieta Romero",
     course: "Full Stack",
-    text: "El curso me permitió transformar mis conocimientos en proyectos concretos. Me gustó mucho la dinámica de aprendizaje y poder aplicar cada concepto a medida que avanzaba. Siento que tengo una base mucho más sólida.",
+    text: "Con 55 años, decidí desafiar mi mente y animarme a aprender programación. Al principio parecía un mundo completamente nuevo, pero gracias a la claridad y paciencia de los profesores, logré entender cada tema. Me sentí muy acompañada durante todo el proceso y descubrí que nunca es tarde para aprender algo nuevo. ¡Fue una experiencia que me hizo muy bien!",
     avatar: Julieta,
   },
        {

@@ -88,6 +88,7 @@
     padding: 12px 28px;
     text-decoration: none;
     cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btnBing {
@@ -100,6 +101,41 @@
     border: solid 2px var(--rc-page-text);
     background: transparent;
      color: var(--rc-page-text);
+}
+
+.btnBing:hover,
+.btnBing:focus-visible {
+    background-color: var(--rc-white);
+    color: var(--rc-red);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btnTicket:hover,
+.btnTicket:focus-visible {
+    background-color: var(--rc-page-text);
+    color: var(--rc-page-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btnBing:active,
+.btnTicket:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+[data-theme="light"] .btnBing:hover,
+[data-theme="light"] .btnBing:focus-visible {
+    background-color: var(--rc-black);
+    border-color: var(--rc-black);
+    color: var(--rc-white);
+}
+
+[data-theme="light"] .btnTicket:hover,
+[data-theme="light"] .btnTicket:focus-visible {
+    background-color: var(--rc-black);
+    color: var(--rc-red);
 }
 
 .mapCard {

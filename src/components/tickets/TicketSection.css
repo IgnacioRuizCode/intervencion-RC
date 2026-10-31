@@ -89,6 +89,12 @@
   font-weight: 800;
   font-size: 18px;
   margin-top: auto;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ticketBtn:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 .outline {
@@ -97,10 +103,25 @@
   color: var(--rc-white);
 }
 
+.outline:hover {
+  background-color: var(--rc-white);
+  border-color: var(--rc-white);
+  color: var(--rc-black);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
 .solid {
   background-color: var(--rc-white);
   border: none;
   color: var(--rc-black);
+}
+
+.solid:hover {
+  background-color: var(--rc-black);
+  color: var(--rc-white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .ticketFeatures {
